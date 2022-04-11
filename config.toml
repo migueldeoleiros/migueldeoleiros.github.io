@@ -1,0 +1,58 @@
+baseURL      = 'http://migueldeoleiros.github.io/'
+languageCode = 'en-us'
+title        = 'MiguelDeOleiros personal blog'
+theme        = 'hello-friend-ng'
+paginate     = 10
+
+[author]
+    name = "Miguel López López"
+
+[params]
+    dateform        = "Jan 2, 2006"
+    dateformShort   = "Jan 2"
+    dateformNum     = "2006-01-02"
+    dateformNumTime = "2006-01-02 15:04"
+
+    # Subtitle for home
+    homeSubtitle = "Computer science student and Linux entusiast"
+
+    # Set disableReadOtherPosts to true in order to hide the links to other posts.
+    disableReadOtherPosts = false
+
+    # Enable sharing buttons, if you like
+    enableSharingButtons = true
+
+    enableThemeToggle = true
+
+    [params.logo]
+        logoText = "/home/migueldeoleiros"
+        logoHomeLink = "/"
+        # or
+        #
+        # path = "/img/your-example-logo.svg"
+        # alt = "Your example logo alt text"
+
+    [params.portrait]
+        path     = "/images/profile.png"
+        alt      = "logo"
+        maxWidth = "150px"
+
+
+[taxonomies]
+    category = "blog"
+    tag      = "tags"
+    series   = "series"
+
+[languages]
+    [languages.en]
+        title = "Miguel López López"
+        subtitle = ""
+        keywords = ""
+        copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
+        readOtherPosts = "Read other posts"
+
+    # And you can even create generic menu
+    [[menu.main]]
+        identifier = "posts"
+        name       = "Posts"
+        url        = "/posts"
