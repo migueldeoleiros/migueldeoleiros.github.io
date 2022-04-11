@@ -1,0 +1,50 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Miguel López López</title><link>http://migueldeoleiros.github.io/posts/</link><description>Recent content in Posts on Miguel López López</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Mon, 11 Apr 2022 14:30:40 +0200</lastBuildDate><atom:link href="http://migueldeoleiros.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>First Post</title><link>http://migueldeoleiros.github.io/posts/first-post/</link><pubDate>Mon, 11 Apr 2022 14:30:40 +0200</pubDate><guid>http://migueldeoleiros.github.io/posts/first-post/</guid><description>This is a header in org-mode This is a test for a post using Hugo
+This is a subheader this is text inside a subheader
+Another subheader first element in a list second element in a list third element in a list Yet another subheader #include &amp;lt;stdio.h&amp;gt; //this is an example of some code int main(){ pritnf(&amp;#34;hello world!</description><content type="html"><![CDATA[
+<div id="outline-container-headline-1" class="outline-2">
+<h2 id="headline-1">
+This is a header in org-mode
+</h2>
+<div id="outline-text-headline-1" class="outline-text-2">
+<p>This is a test for a post using Hugo</p>
+<div id="outline-container-headline-2" class="outline-3">
+<h3 id="headline-2">
+This is a subheader
+</h3>
+<div id="outline-text-headline-2" class="outline-text-3">
+<p>this is text inside a subheader</p>
+</div>
+</div>
+<div id="outline-container-headline-3" class="outline-3">
+<h3 id="headline-3">
+Another subheader
+</h3>
+<div id="outline-text-headline-3" class="outline-text-3">
+<ul>
+<li>first element in a list</li>
+<li>second element in a list</li>
+<li>third element in a list</li>
+</ul>
+<div id="outline-container-headline-4" class="outline-4">
+<h4 id="headline-4">
+Yet another subheader
+</h4>
+<div id="outline-text-headline-4" class="outline-text-4">
+<div class="src src-c">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>  <span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">//this is an example of some code
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+</span></span><span style="display:flex;"><span>      pritnf(<span style="color:#e6db74">&#34;hello world!</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>  }</span></span></code></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+]]></content></item></channel></rss>
