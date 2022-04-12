@@ -37,6 +37,14 @@ paginate     = 10
         alt      = "logo"
         maxWidth = "150px"
 
+    # Social icons
+    [[params.social]]
+        name = "email"
+        url = "mailto:migueldeoleiros@gmail.com"
+
+    [[params.social]]
+        name = "github"
+        url = "https://github.com/migueldeoleiros"
 
 [taxonomies]
     category = "blog"
