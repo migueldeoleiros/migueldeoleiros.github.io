@@ -40,7 +40,7 @@ them here, but when editing text quickly the best haw to move around is with *hj
 
 If you are a gamer you'll know the classic *wasd*, *hjkl* is the counterpart of that on your left hand, but
 using only keys on the homerow to decrease movement, so *h* is left, *j* if up, *k* is down and *l* is right.
-Now that you can move the cursor one character at a time, but that isn't very efficient. To fix that Vim divides
+Now you can move the cursor one character at a time, but that isn't very efficient. To fix that Vim divides
 the text in units, one unit could be a character, but it could also be a word or a line. 
 
 | unit      | jump to start | jump to finish |
