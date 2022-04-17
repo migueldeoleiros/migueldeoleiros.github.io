@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Miguel López López</title><link>http://migueldeoleiros.github.io/posts/</link><description>Recent content in Posts on Miguel López López</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Tue, 12 Apr 2022 12:18:25 +0200</lastBuildDate><atom:link href="http://migueldeoleiros.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>How Vim can change the way you edit code</title><link>http://migueldeoleiros.github.io/posts/vim-introduction/</link><pubDate>Tue, 12 Apr 2022 12:18:25 +0200</pubDate><guid>http://migueldeoleiros.github.io/posts/vim-introduction/</guid><description>What is Vim? According to the official website: &amp;#34;Vim is a highly configurable text editor built to make creating and changing any kind of text very efficient&amp;#34; So we know that Vim is a text editor that is designed with efficiency in mind, but what is the difference between Vim and any other editor? and why is it more efficient? \\
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Miguel López López</title><link>http://migueldeoleiros.github.io/posts/</link><description>Recent content in Posts on Miguel López López</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Sun, 17 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://migueldeoleiros.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Vim introduction, form basic to advance</title><link>http://migueldeoleiros.github.io/posts/vim-introduction/</link><pubDate>Sun, 17 Apr 2022 00:00:00 +0000</pubDate><guid>http://migueldeoleiros.github.io/posts/vim-introduction/</guid><description>What is Vim? According to the official website: &amp;#34;Vim is a highly configurable text editor built to make creating and changing any kind of text very efficient&amp;#34; So we know that Vim is a text editor that is designed with efficiency in mind, but what is the difference between Vim and any other editor? and why is it more efficient?
 If you&amp;#39;ve never heard of vim before you are most likely used to the classic way of editing text, where you type characters with the keys to form words and you have some extra functions convincing the Ctr and Alt keys, like the classic Ctr-c and Ctr-v to copy and paste.</description><content type="html"><![CDATA[
 <div id="outline-container-headline-1" class="outline-2">
 <h2 id="headline-1">
@@ -7,7 +7,7 @@ What is Vim?
 <div id="outline-text-headline-1" class="outline-text-2">
 <p>According to the official website:
 <strong>&#34;Vim is a highly configurable text editor built to make creating and changing any kind of text very efficient&#34;</strong>
-So we know that Vim is a text editor that is designed with efficiency in mind, but what is the difference between Vim and any other editor? and why is it more efficient? \\</p>
+So we know that Vim is a text editor that is designed with efficiency in mind, but what is the difference between Vim and any other editor? and why is it more efficient?</p>
 <p>
 If you&#39;ve never heard of vim before you are most likely used to the classic way of editing text, where you type
 characters with the keys to form words and you have some extra functions convincing the <strong>Ctr</strong> and <strong>Alt</strong> keys,
@@ -49,7 +49,7 @@ Movement commands
 <div id="outline-text-headline-4" class="outline-text-3">
 <p>The very first commands that we are gonna learn are basic movements. One of the key functions of Vim is that
 when using it you won&#39;t ever need to touch a mouse. You may be used to the arrow keys, and you can also use
-them here, but when editing text quickly the best haw to move around is with <strong>hjkl</strong>, let me explain: \\</p>
+them here, but when editing text quickly the best haw to move around is with <strong>hjkl</strong>, let me explain:</p>
 <p>
 If you are a gamer you&#39;ll know the classic <strong>wasd</strong>, <strong>hjkl</strong> is the counterpart of that on your left hand, but
 using only keys on the homerow to decrease movement, so <strong>h</strong> is left, <strong>j</strong> if up, <strong>k</strong> is down and <strong>l</strong> is right.
@@ -925,55 +925,6 @@ Because we are using a theme that is compatible with lightline, we can also add 
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>let g:lightline = {
 </span></span><span style="display:flex;"><span>      \ &#39;colorscheme&#39;: &#39;onedark&#39;,
 </span></span><span style="display:flex;"><span>      \ }</span></span></code></pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-]]></content></item><item><title>test post</title><link>http://migueldeoleiros.github.io/posts/first-post/</link><pubDate>Mon, 11 Apr 2022 14:30:40 +0200</pubDate><guid>http://migueldeoleiros.github.io/posts/first-post/</guid><description>This is a header in org-mode This is a test for a post using Hugo
-This is a subheader this is text inside a subheader
-Another subheader first element in a list second element in a list third element in a list Yet another subheader #include &amp;lt;stdio.h&amp;gt; //this is an example of some code int main(){ pritnf(&amp;#34;hello world!</description><content type="html"><![CDATA[
-<div id="outline-container-headline-1" class="outline-2">
-<h2 id="headline-1">
-This is a header in org-mode
-</h2>
-<div id="outline-text-headline-1" class="outline-text-2">
-<p>This is a test for a post using Hugo</p>
-<div id="outline-container-headline-2" class="outline-3">
-<h3 id="headline-2">
-This is a subheader
-</h3>
-<div id="outline-text-headline-2" class="outline-text-3">
-<p>this is text inside a subheader</p>
-</div>
-</div>
-<div id="outline-container-headline-3" class="outline-3">
-<h3 id="headline-3">
-Another subheader
-</h3>
-<div id="outline-text-headline-3" class="outline-text-3">
-<ul>
-<li>first element in a list</li>
-<li>second element in a list</li>
-<li>third element in a list</li>
-</ul>
-<div id="outline-container-headline-4" class="outline-4">
-<h4 id="headline-4">
-Yet another subheader
-</h4>
-<div id="outline-text-headline-4" class="outline-text-4">
-<div class="src src-c">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>  <span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">//this is an example of some code
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
-</span></span><span style="display:flex;"><span>      pritnf(<span style="color:#e6db74">&#34;hello world!</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>  }</span></span></code></pre></div>
-</div>
-</div>
 </div>
 </div>
 </div>
