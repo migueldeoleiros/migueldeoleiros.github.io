@@ -394,13 +394,11 @@ This are the most basic things that I feel are a must on any configuration:
 You can comment any lines that you don't want with a single *"* at the start.
 To learn more about this options you can use *:help* /option/
 #+begin_src 
-
 syntax enable                           " Enables syntax highlighing
 set hidden                              " Required to keep multiple buffers open multiple buffers
 set nowrap                              " Display long lines as just one line
 set autoindent                          " Autoindent
 set wildmenu                            " Better completion
-set nobackup                            " Do not save backup files.
 set encoding=utf-8                      " The encoding displayed
 set pumheight=10                        " Makes popup menu smaller
 set fileencoding=utf-8                  " The encoding written to file
@@ -421,15 +419,11 @@ set smartindent                         " Makes indenting smart
 set autoindent                          " Good auto indent
 set number                              " Line numbers
 " set cursorline                          " Enable highlighting of the current line
-" set background=dark                     " tell vim what the background color looks like
 " set showtabline=2                       " Always show tabs
 set laststatus=2                        " Always display statusline 
 set showcmd
 set ignorecase                          " Case insensitive search
 set smartcase                           " Overide ignorecase if the search includes upercase
-
-set noshowmode                          " We don't need to see things like -- INSERT -- anymore
-
 #+end_src
 
 * Set up custom keybinds
@@ -495,4 +489,9 @@ Because we are using a theme that is compatible with lightline, we can also add 
 let g:lightline = {
       \ 'colorscheme': 'onedark',
       \ }
+#+end_src
+
+And because the new modeline includes a current mode indicator que can add this to hide the plain text one:
+#+begin_src
+set noshowmode                          " We don't need to see things like -- INSERT -- anymore
 #+end_src
