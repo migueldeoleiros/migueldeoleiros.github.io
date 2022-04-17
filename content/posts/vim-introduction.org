@@ -366,7 +366,7 @@ overwriting it.
 
 * Splits
 If you use a terminal that allows splits you could open another instance of Vim on a split and be over with it, but 
-using Vim's built in splits allows you to share registers and copy text form one file to another without much trouble.
+using Vim's built in splits allows you to share registers and copy text from one file to another without much trouble.
 
 This are the main commands that you need to know:
 |-----------+--------------------------------|
