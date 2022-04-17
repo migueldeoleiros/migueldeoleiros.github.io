@@ -1,6 +1,11 @@
 ---
-title: "First Post"
+title: "test post"
 date: 2022-04-11T14:30:40+02:00
+toc: true
+tags:
+  - tests
+  - posts
+
 draft: false
 ---
 

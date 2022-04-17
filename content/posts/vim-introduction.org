@@ -1,0 +1,498 @@
+---
+title: "How Vim can change the way you edit code"
+date: 2022-04-12T12:18:25+02:00
+toc: true
+tags:
+  - tutorial
+draft: false
+---
+* What is Vim?
+According to the official website:
+*"Vim is a highly configurable text editor built to make creating and changing any kind of text very efficient"*
+So we know that Vim is a text editor that is designed with efficiency in mind, but what is the difference between Vim and any other editor? and why is it more efficient? \\
+
+If you've never heard of vim before you are most likely used to the classic way of editing text, where you type
+characters with the keys to form words and you have some extra functions convincing the *Ctr* and *Alt* keys,
+like the classic *Ctr-c* and *Ctr-v* to copy and paste. Vim uses a completely different paradigm called
+*Modal editing* where you have different "modes" that change the function of each key. This can be a little
+hard to understand at first so I advice to follow this article trying the commands at the same time on the editor.
+
+If you are using Linux you may have it already installed, in any other case you can install it using your OS repos or from
+here [[https://www.vim.org/download.php][here]].
+
+* Modes in Vim
+As stated before, Vim uses a Modal editing approach where keys can change it's function depending on the mode that you're in.
+There ate 4 mayor modes, although you'll find that there are more variants in a bit.
+This are:
+- Normal mode
+- Insert mode
+- Visual mode
+- Command mode
+
+** Normal mode
+This is the default mode that you'll be in when you open the editor, that's where the name comes from. You'll find that the
+keys that usually work for characters aren't typing anything in this case, this is because in Normal mode each key represents a command.
+
+** Movement commands
+The very first commands that we are gonna learn are basic movements. One of the key functions of Vim is that
+when using it you won't ever need to touch a mouse. You may be used to the arrow keys, and you can also use
+them here, but when editing text quickly the best haw to move around is with *hjkl*, let me explain: \\
+
+If you are a gamer you'll know the classic *wasd*, *hjkl* is the counterpart of that on your left hand, but
+using only keys on the homerow to decrease movement, so *h* is left, *j* if up, *k* is down and *l* is right.
+Now that you can move the cursor one character at a time, but that isn't very efficient. To fix that Vim divides
+the text in units, one unit could be a character, but it could also be a word or a line. 
+
+| unit      | jump to start | jump to finish |
+|-----------+---------------+----------------|
+| word      | *b*           | *e*            |
+|-----------+---------------+----------------|
+| line      | *0*           | *$*            |
+|-----------+---------------+----------------|
+| paragraph | *}*           | *}*            |
+|-----------+---------------+----------------|
+| file      | *gg*          | *G*            |
+|-----------+---------------+----------------|
+
+This may look overcomplicated, and you wont use all of this keys at the start, but once we learn about combining
+commands it'll make a lot more sense.
+
+** Search
+We can also move around the file using the search function, this is very similar to what you may be used to in other text
+editors and applications with *Ctr-f*. In vim we use */*, you'll see that when you press it, a line appears at the bottom of
+the screen, where you can type the search.
+If there is more than one match for your search and you want to see the other ones, after pressing *Enter* you can
+move through them with *n* (forward)  and *N* (backwards).
+Something nice about how the search function works in Vim is that you can move around and do your edits after
+searching for something and as soon as you click *n* you'll be back at your last search.
+
+If you want to search text before the cursor instead of after, you could use *?* instead of */* everything else would work
+the same but backwards.
+
+** Insert mode
+Now that we know how to move around the text we need to learn how to write, which seems pretty obvious for a text editor.
+
+Insert mode is very similar of what you would find on a regular editor, and to get into it you just need to press *i* while
+in normal mode. Now you can type whatever you want, use backspace to delete and even use the arrow keys to move,
+although that isn't the most efficient, and you should probably go back to normal mode if you want to move the cursor.
+But, how do we exit insert mode then? That's done with the *ESC* key, and if fact, is so commonly used that it's common
+practice to rebind the *Caps lock* key to *ESC* to have it a little closer.
+
+Another way to enter insert mode is with pressing *a* in this case the cursor will be after the character instead of before.
+You could also use the *o* command to create a new line at the same time you enter insert mode.
+
+** Editing commands
+On a text editor more than inserting text you'll probably spend more time editing what's already there, specially as a
+developer. For the most basic edit, you can replace a character pressing *r* while on normal mode, but what you'll
+probably what to use is the *c* as in /change/ command. This is the first command that we learn that need to be combined
+in order to work, if you only type *c* nothing will happen until you give another command. We'll learn about how to do this
+in a minute, but for now you can try *cw* as in /change word/ to replace the content of the current word. You'll notice that
+you change to /insert mode/, so you'll need to use *ESC* to go back after replacing the content of the word.
+
+** Copy, paste and delete
+We're all familiar with *Ctr-c* and *Ctr-v*, but you'll quickly realize how fast and easy you can copy and paste text with
+Vim. Copy is called /yank/ and the command for that is *y*, paste is a little more intuitive, the command is *p*, for cutting
+text we'll use *d* as in delete. In Vim, every time you delete text it's saved in a register, so you can paste it afterwards,
+that's why there isn't a "cut" command.
+
+If you try them you'll probably noticed that this three commands work in a similar way to the *c* /change/ command, but
+we'll see you another way of combining them this time. You can repeat the command to use it in a line, so *yy* yanks a
+line and *pp* pastes it, same thing with *dd* to delete a line.
+
+Unless you want to move everything one line at a time you probably want a better way to select text, this is where /visual mode/ comes handy.
+
+** Visual mode
+To enter /visual mode/ type *v* while in /normal mode/. You can use all the movement commands that we learned earlier
+and you'll see that the selection follows the cursor starting from where it was first. Other than movement you can use
+some commands like *y* /yank/, *d* delete and *c* /change/ and those will be executed on the selection.
+
+There are also two other variants of visual mode that you'll find very useful, this are: /Visual Line/ and /Visual Block/ modes.
+
+To enter /Visual Line mode/ the command is uppercase *V*, this selects the text divided in lines. Notice that if you have line
+wrap activated you may see more than one line while it's only one real one, so vim will interpret it as such.
+
+To enter /Visual Block/ the command is *Ctr-v*, this selects text in a block. It's a great feature, as it allow you to select
+text vertically as well as horizontally.
+
+** Command mode
+There is only one mode left to present, and we haven't learned how to save and exit Vim yet.
+To get into /Command Mode/ press *:*, you'll notice that you can now write in a line similar to what we do for searching, but when you press *Enter* whatever you wrote will be executed.
+
+This are the commands that you'll want to use more often:
+|--------+-----------------------------------------|
+| :w     | write file                              |
+|--------+-----------------------------------------|
+| :w foo | write on file called "foo"              |
+|--------+-----------------------------------------|
+| :q     | quit vim                                |
+|--------+-----------------------------------------|
+| :q!    | quit vim without saving                 |
+|--------+-----------------------------------------|
+| :wq    | write file and quit vim                 |
+|--------+-----------------------------------------|
+| :e foo | open file called "foo"                  |
+|--------+-----------------------------------------|
+| :!ls   | execute ls command on system shell      |
+|--------+-----------------------------------------|
+| :r !ls | read output of ls command and insert it |
+|--------+-----------------------------------------|
+
+
+** VIM grammar
+Yes, Vim has grammar, and it probably is one of the most interesting parts about it, but if you didn't like English at school
+don't worry, you can also see this as a sort of programming language.
+To understand this, we'll divide Vim commands in 3 groups: Verbs, Modifiers and Nouns.
+*** Verbs
+|-----+--------------------------------|
+| *x* | delete character under cursor  |
+|-----+--------------------------------|
+| *r* | replace character under cursor |
+|-----+--------------------------------|
+| *c* | change                         |
+|-----+--------------------------------|
+| *y* | yank (copy)                    |
+|-----+--------------------------------|
+| *d* | delete                         |
+|-----+--------------------------------|
+| *p* | paste                          |
+|-----+--------------------------------|
+| *v* | visually select                |
+|-----+--------------------------------|
+
+*** Modifiers
+|-----+----------------------------------------------------|
+| *i* | inside                                             |
+|-----+----------------------------------------------------|
+| *a* | around                                             |
+|-----+----------------------------------------------------|
+| NUM | any number (0,1,2..)                               |
+|-----+----------------------------------------------------|
+| *t* | searches for something and stops before it (to --) |
+|-----+----------------------------------------------------|
+| *f* | searches for something and lands on it (find)      |
+|-----+----------------------------------------------------|
+| */* | find a string                                      |
+|-----+----------------------------------------------------|
+
+*** Noun
+|-----------+---------------------------------|
+| *w*       | start of next word              |
+|-----------+---------------------------------|
+| *b*       | start of previous word (before) |
+|-----------+---------------------------------|
+| *e*       | end of word                     |
+|-----------+---------------------------------|
+| *s*       | sentence                        |
+|-----------+---------------------------------|
+| *p*       | paragraph                       |
+|-----------+---------------------------------|
+| *t*       | tag (HTML)                      |
+|-----------+---------------------------------|
+| *b*       | code block                      |
+|-----------+---------------------------------|
+| *h,j,k,l* | left, down, up, right           |
+|-----------+---------------------------------|
+| *$*       | end of line                     |
+|-----------+---------------------------------|
+| *0*       | start of line                   |
+|-----------+---------------------------------|
+
+*** Make Sentences
+Now that we know the parts to form a sentence let's make our first basic ones. You can use the number modifier with
+any command to repeat it set number of times. For example *2w* will move the cursor two words instead of one.
+Now with a verb, *d2w* will delete the current and next word. I'm sure you are getting how this works, here you have some other examples:
+- *vap* Visually select this paragraph (/visual around paragraph/)
+- *ci"* Change text inside quotes
+- *ca"* Change text around quotes (includes quotes)
+- *dt,* Delete text until the next coma on the current line 
+- *dj* Delete this and the line below
+- *d/something* Delete text until the next search that matches "something" 
+ 
+** The "dot" or repeat command
+You can repeat the last command by pressing *.*, for example is you execute *ciwhello<ESC>* this will replace the word
+you're over with hello. If you then move to a different word and press *.* that last command will be repeated and the word
+would also be changed to "hello". you can do this as many times as you want as long as you don't use any other command
+in between. The /dot/ command can also be used with the number modifier, that way *3.* will be the same as *...*. 
+
+** Macros
+Macros are a little bit like an overpowered /dot/ command, They allow us to record any number of commands and repeat
+them at will later.
+You may have noticed that the /dot/ command only repeats the commands that modifies the text, it wont repeat the
+movement commands, macros don't have that limitation, and we'll see how that can be very usefully.
+
+To record a macro you need to press *q* followed by any letter, that letter will be where the macro will be recorded. Then you execute the serie of commands that you want to record and press *q* again.
+
+To execute said macro you press *@* followed by the letter that you used before. You can also repeat the last executed
+macro with *@@* as *.@* would only repeat the last command inside the macro.
+
+A very common example where I like to use macros is when editing a list of items, let's make a simple one to add ";" at the end of each line.
+
+We are gonna use the register "a" but you could save this anywhere, so to start *qa* now to append ";" to the end of the
+line we could do *$a;<ESC>* but we can shorten *$a* as just *A* (for adding something at the beginning you could also
+use *I* instead of *0i*). Now we want to be on the next line to make it easier to execute the macro again, so *j* and lastly
+*q* to finish the macro. Adding all this together it would be *qaA;<ESC>jq*
+And to execute this you could do *@a*, maybe you have 10 lines to add a semicolon, so you could got to the first one and do *10@a*.
+
+If you wanted to repeat this with every line in a file the fastest way to do that is with recursion, in this case with
+*qaA;<ESC>j@aq* the macro would call itself until there are no more lines. Note that for recursion to work you need to
+save the macro in a clean register, to clean the register "a" you can execute *qaq*.
+
+** Search and replace
+The search and replace function in Vim is done through a command on /Command Mode/, that allows us to have a lot of
+control over it.
+The way you're probably going to use the most is this: *:%s/bad/good/g* this would change all words "bad" to "good" in the file.
+It already seems pretty easy to use, but if wee want to have a bit more control we can divide it in parts:
+*:[range] s[ubstitute]/pattern/string/[flags] [count]*
+where the parameters between brackets are optional
+*** range
+On our first example the range was "%", that defines the whole file, but we can also omit it to execute the same thing
+on just one line. in a similar way you could do *:1,10s/bad/good/g* to execute the command in lines one to ten.
+while defining ranges you can use the next table and it's combinations:
+|------+------------------------|
+| .    | current line           |
+|------+------------------------|
+| 1    | first line             |
+|------+------------------------|
+| $    | last line              |
+|------+------------------------|
+| %    | all lines              |
+|------+------------------------|
+| .+1  | line after current     |
+|------+------------------------|
+| 1,10 | range between 1 and 10 |
+|------+------------------------|
+
+*** flags
+Flags can be combined as well, and aren't required.
+Using the previous example you can add a confirmation with the flag "c" *:$s/bad/good/gc*
+|---+-----------------------------------|
+| g | replace all                       |
+|---+-----------------------------------|
+| c | ask for confirmation              |
+|---+-----------------------------------|
+| i | ignore case for the pattern       |
+|---+-----------------------------------|
+| I | don't ignore case for the pattern |
+|---+-----------------------------------|
+
+*** Regular expressions 
+You can use regular expressions inside the commands, this gives us a lot of flexibility.
+Notice that to use regex you need to add "\" before the expressions so they aren't counted as regular text
+Here are some examples:
+
+*:$s/\(bad\|good\)/great/g* This would replace any instance of "bad" or "good" with "great"
+
+*:$s/\<good\>/bad/g* This would replace only good as a whole word
+
+** The global command
+The global command can also be quite useful, and if you understand how to use /substitute/ it is very similar.
+The syntax is: *:[rage]g/pattern/command*
+Where *pattern* is what we are looking to match in the file and *command* is what we want to execute for
+each line matching the pattern.
+As an example we can run *:g/error/d* to execute the command *d* /delete/ on every line that contains the word
+"error".
+We could also run *:g!/error/d* to invert the search, this time deleting every line that doesn't contain "error".
+
+You can also execute a substitute command inside a global command like in *:g/bad/s/good/great/g* where
+it runs the command *s/good/great/g* for every line containing the word "bad"
+
+Note that although in this examples *d* is both a normal mode command and a command mode command,
+you can only execute command mode commands with the global command. That said, you can use the normal
+prefix to execute a normal mode command like in this example: *:g/something/normal @a* where we execute
+the macro in register "a" for every line containing "something".
+
+** Undo, redo and time-travel
+Vim undo and redo functions works for the most part as you would expect, you can press *u* in normal mode to
+undo the last action and *Ctr-r* to redo it. You can also use *u* with a number modifier like *3u* to undo 3 steps.
+
+You may be thinking "what's up with time-traveling and what does it have to do with Vim?". Well, Vim allow you to
+move back and forward on your file edits not only one by one, but also by time intervals, here are some examples:
+|--------------+------------------------------------|
+| :earlier 10m | undo changes in last 10 minutes    |
+|--------------+------------------------------------|
+| :ea 2d       | undo changes in last 2 days        |
+|--------------+------------------------------------|
+| :later 10m   | redo changes in last 10 minutes    |
+|--------------+------------------------------------|
+| :lat 10s     | redo changes in last 10 seconds    |
+|--------------+------------------------------------|
+| :ea 3f       | undo changes in last 3 file writes |
+|--------------+------------------------------------|
+
+** Registers
+We touched on registers while talking about macros and also while talking about the yank(copy) and delete commands. 
+You'll soon realize that a lot of commands are related to them.
+
+A register is something like a clipboard or a container where you store text. You can access any register by using a double
+quote before its name, for example for register /a/ with /"a/.
+You can add and print text from a register with the yank and paste commands. To add text to /a/ use *"ay* and to print it
+*"ap*.
+
+To see the content of all the used registers you can use to command *:reg* or *:register*, you'll notice that there
+are quite a lot of things going on.
+
+*** Yank, delete and numbered registers
+You may have noticed when we talked about copy and deleting text that if you copy something and then delete some
+text, when you go to paste it, you would have the deleted text instead of what you copied. This can be solved thanks to registers.
+
+Every time you copy or delete something this would go to the *"* register, which is the default when pasting (*""p* is the
+same as *pp*), but only yanking text gets saved on the *0* register by default.
+You could access the last copied text with *"0p* even after deleting something after.
+
+Both deleted and yanked text gets saved in order in the other number registers, so the last
+yanked text is on *1*, the previous one is on *2*, the one before in *3* and so on.
+
+*** Read only registers and search register
+There are 4 read only registers, where the next information is saved:
+|-----+-----------------------|
+| *.* | last inserted text    |
+|-----+-----------------------|
+| *%* | current file path     |
+|-----+-----------------------|
+| *:* | last executed command |
+|-----+-----------------------|
+| *#* | last edited file      |
+|-----+-----------------------|
+
+This isn't read only, but the last text you search will end up on the */* register, as expected.
+
+*** Alphabetic registers and macros
+You may have realized already that macros are just strings of text saved on a register, and the *@* executes whatever is
+inside of them, you could save anything inside of those registers and even record macros without executing them before.
+With the command *:let* you can enter text directly inside a register like *:let @a='hello'*.
+
+Note that registers *a* and *A* are the same, but if you write on register *A* you'll be appending text to *a* instead of
+overwriting it. 
+
+** Splits
+If you use a terminal that allows splits you could open another instance of Vim on a split and be over with it, but 
+using Vim's built in splits allows you to share registers and copy text form one file to another without much trouble.
+
+This are the main commands that you need to know:
+|-----------+--------------------------------|
+| *Ctr-w v* | make a vertical split          |
+|-----------+--------------------------------|
+| *Ctr-w s* | make a horizontal split        |
+|-----------+--------------------------------|
+| *Ctr-w h* | move to the split to the left  |
+|-----------+--------------------------------|
+| *Ctr-w j* | move to the split below        |
+|-----------+--------------------------------|
+| *Ctr-w k* | move to the split above        |
+|-----------+--------------------------------|
+| *Ctr-w l* | move to the split to the right |
+|-----------+--------------------------------|
+| *Ctr-w c* | close (remove) split           |
+|-----------+--------------------------------|
+
+** Basic config
+Now that we've touched on most of the important parts of vim you probably want to change the default look and feel.
+You can do so on a file called /.vimrc/ on your home directory.
+
+This are the most basic things that I feel are a must on any configuration:
+
+You can comment any lines that you don't want with a single *"* at the start.
+To learn more about this options you can use *:help* /option/
+#+begin_src 
+
+syntax enable                           " Enables syntax highlighing
+set hidden                              " Required to keep multiple buffers open multiple buffers
+set nowrap                              " Display long lines as just one line
+set autoindent                          " Autoindent
+set wildmenu                            " Better completion
+set nobackup                            " Do not save backup files.
+set encoding=utf-8                      " The encoding displayed
+set pumheight=10                        " Makes popup menu smaller
+set fileencoding=utf-8                  " The encoding written to file
+set ruler                			      " Show the cursor position all the time
+set cmdheight=1                         " More space for displaying messages
+set iskeyword+=-                        " treat dash separated words as a word text object"
+set mouse=a                             " Enable your mouse
+set splitbelow                          " Horizontal splits will automatically be below
+set splitright                          " Vertical splits will automatically be to the right
+set t_Co=256                            " Support 256 colors
+set conceallevel=0                      " So that you can see `` in markdown files
+set tabstop=4                           " Insert 4 spaces for a tab
+set smarttab
+set ttyfast                             " improve smoothness
+set incsearch                           " Search as you type
+set shiftwidth=4                        " Change the number of space characters inserted for indentation
+set smartindent                         " Makes indenting smart
+set autoindent                          " Good auto indent
+set number                              " Line numbers
+" set cursorline                          " Enable highlighting of the current line
+" set background=dark                     " tell vim what the background color looks like
+" set showtabline=2                       " Always show tabs
+set laststatus=2                        " Always display statusline 
+set showcmd
+set ignorecase                          " Case insensitive search
+set smartcase                           " Overide ignorecase if the search includes upercase
+
+set noshowmode                          " We don't need to see things like -- INSERT -- anymore
+
+#+end_src
+
+** Set up custom keybinds
+If you keep using Vim as your main editor you'll end up wanting to change some keybinds or create new ones with macros
+that you use often. Luckily that is really easy to do following this syntax in your /.vimrc/ :
+*map_mode <what_you_type> <what_is_executed>*
+
+For *map_mode* you can use: 
+|----------+--------------------------|
+| nnoremap | map keys in normal mode. |
+|----------+--------------------------|
+| inoremap | map keys in insert mode. |
+|----------+--------------------------|
+| vnoremap | map keys in visual mode. |
+|----------+--------------------------|
+
+Here is a useful example for remapping the window resize commands in normal mode:
+#+begin_src
+" Resize split windows using arrow keys by pressing:
+" CTRL+UP, CTRL+DOWN, CTRL+LEFT, or CTRL+RIGHT.
+noremap <c-up> <c-w>+
+noremap <c-down> <c-w>-
+noremap <c-left> <c-w>>
+noremap <c-right> <c-w><
+#+end_src
+
+** Change theme
+The default look and feel of Vim can be outdated, but just because it's a command line program doesn't mean it need to
+look like this.
+
+We are going to add a colorscheme to make it look a bit more modern.
+For that we are going to follow the instruction on https://github.com/joshdick/onedark.vim to install the one dark
+theme inspired on the Atom text editor. And add this line to our /.vimrc/
+
+#+begin_src
+colorscheme onedark
+#+end_src
+
+If you want you background to be the same as the terminal you can also add this *before* the previous line: 
+#+begin_src
+"transparency with onedark theme
+if (has("autocmd") && !has("gui_running"))
+  augroup colorset
+    autocmd!
+    let s:white = { "gui": "#ABB2BF", "cterm": "145", "cterm16" : "7" }
+    autocmd ColorScheme * call onedark#set_highlight("Normal", { "fg": s:white }) " `bg` will not be styled since there is no `bg` setting
+  augroup END
+endif
+#+end_src
+
+** More plugins
+Because Vim has been around for a long time and has a very active community you can find a lot of interesting plugins.
+
+Following the theme we are going to install a new modeline that looks more modern and goes well with the colorscheme.
+
+You could use a plugin manager like [[https://github.com/junegunn/vim-plug][vim-plug]], but Vim now manages packages itself, so I'm going to show you how to do that.
+
+For the modeline we are going to use https://github.com/itchyny/lightline.vim
+if we follow the instructions for /Vim packages/ you only need to clone the repo inside *~/.vim/pack/plugins/start/lightline*
+
+Because we are using a theme that is compatible with lightline, we can also add this to match the colors:
+#+begin_src
+let g:lightline = {
+      \ 'colorscheme': 'onedark',
+      \ }
+#+end_src
