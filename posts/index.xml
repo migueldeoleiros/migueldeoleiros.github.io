@@ -33,20 +33,22 @@ This are:</p>
 <li>Visual mode</li>
 <li>Command mode</li>
 </ul>
-<div id="outline-container-headline-3" class="outline-3">
-<h3 id="headline-3">
+</div>
+</div>
+<div id="outline-container-headline-3" class="outline-2">
+<h2 id="headline-3">
 Normal mode
-</h3>
-<div id="outline-text-headline-3" class="outline-text-3">
+</h2>
+<div id="outline-text-headline-3" class="outline-text-2">
 <p>This is the default mode that you&#39;ll be in when you open the editor, that&#39;s where the name comes from. You&#39;ll find that the
 keys that usually work for characters aren&#39;t typing anything in this case, this is because in Normal mode each key represents a command.</p>
 </div>
 </div>
-<div id="outline-container-headline-4" class="outline-3">
-<h3 id="headline-4">
+<div id="outline-container-headline-4" class="outline-2">
+<h2 id="headline-4">
 Movement commands
-</h3>
-<div id="outline-text-headline-4" class="outline-text-3">
+</h2>
+<div id="outline-text-headline-4" class="outline-text-2">
 <p>The very first commands that we are gonna learn are basic movements. One of the key functions of Vim is that
 when using it you won&#39;t ever need to touch a mouse. You may be used to the arrow keys, and you can also use
 them here, but when editing text quickly the best haw to move around is with <strong>hjkl</strong>, let me explain:</p>
@@ -97,11 +99,11 @@ This may look overcomplicated, and you wont use all of this keys at the start, b
 commands it&#39;ll make a lot more sense.</p>
 </div>
 </div>
-<div id="outline-container-headline-5" class="outline-3">
-<h3 id="headline-5">
+<div id="outline-container-headline-5" class="outline-2">
+<h2 id="headline-5">
 Search
-</h3>
-<div id="outline-text-headline-5" class="outline-text-3">
+</h2>
+<div id="outline-text-headline-5" class="outline-text-2">
 <p>We can also move around the file using the search function, this is very similar to what you may be used to in other text
 editors and applications with <strong>Ctr-f</strong>. In vim we use <strong>/</strong>, you&#39;ll see that when you press it, a line appears at the bottom of
 the screen, where you can type the search.
@@ -114,11 +116,11 @@ If you want to search text before the cursor instead of after, you could use <st
 the same but backwards.</p>
 </div>
 </div>
-<div id="outline-container-headline-6" class="outline-3">
-<h3 id="headline-6">
+<div id="outline-container-headline-6" class="outline-2">
+<h2 id="headline-6">
 Insert mode
-</h3>
-<div id="outline-text-headline-6" class="outline-text-3">
+</h2>
+<div id="outline-text-headline-6" class="outline-text-2">
 <p>Now that we know how to move around the text we need to learn how to write, which seems pretty obvious for a text editor.</p>
 <p>
 Insert mode is very similar of what you would find on a regular editor, and to get into it you just need to press <strong>i</strong> while
@@ -131,11 +133,11 @@ Another way to enter insert mode is with pressing <strong>a</strong> in this cas
 You could also use the <strong>o</strong> command to create a new line at the same time you enter insert mode.</p>
 </div>
 </div>
-<div id="outline-container-headline-7" class="outline-3">
-<h3 id="headline-7">
+<div id="outline-container-headline-7" class="outline-2">
+<h2 id="headline-7">
 Editing commands
-</h3>
-<div id="outline-text-headline-7" class="outline-text-3">
+</h2>
+<div id="outline-text-headline-7" class="outline-text-2">
 <p>On a text editor more than inserting text you&#39;ll probably spend more time editing what&#39;s already there, specially as a
 developer. For the most basic edit, you can replace a character pressing <strong>r</strong> while on normal mode, but what you&#39;ll
 probably what to use is the <strong>c</strong> as in <em>change</em> command. This is the first command that we learn that need to be combined
@@ -144,11 +146,11 @@ in a minute, but for now you can try <strong>cw</strong> as in <em>change word</
 you change to <em>insert mode</em>, so you&#39;ll need to use <strong>ESC</strong> to go back after replacing the content of the word.</p>
 </div>
 </div>
-<div id="outline-container-headline-8" class="outline-3">
-<h3 id="headline-8">
+<div id="outline-container-headline-8" class="outline-2">
+<h2 id="headline-8">
 Copy, paste and delete
-</h3>
-<div id="outline-text-headline-8" class="outline-text-3">
+</h2>
+<div id="outline-text-headline-8" class="outline-text-2">
 <p>We&#39;re all familiar with <strong>Ctr-c</strong> and <strong>Ctr-v</strong>, but you&#39;ll quickly realize how fast and easy you can copy and paste text with
 Vim. Copy is called <em>yank</em> and the command for that is <strong>y</strong>, paste is a little more intuitive, the command is <strong>p</strong>, for cutting
 text we&#39;ll use <strong>d</strong> as in delete. In Vim, every time you delete text it&#39;s saved in a register, so you can paste it afterwards,
@@ -161,11 +163,11 @@ line and <strong>pp</strong> pastes it, same thing with <strong>dd</strong> to d
 Unless you want to move everything one line at a time you probably want a better way to select text, this is where <em>visual mode</em> comes handy.</p>
 </div>
 </div>
-<div id="outline-container-headline-9" class="outline-3">
-<h3 id="headline-9">
+<div id="outline-container-headline-9" class="outline-2">
+<h2 id="headline-9">
 Visual mode
-</h3>
-<div id="outline-text-headline-9" class="outline-text-3">
+</h2>
+<div id="outline-text-headline-9" class="outline-text-2">
 <p>To enter <em>visual mode</em> type <strong>v</strong> while in <em>normal mode</em>. You can use all the movement commands that we learned earlier
 and you&#39;ll see that the selection follows the cursor starting from where it was first. Other than movement you can use
 some commands like <strong>y</strong> <em>yank</em>, <strong>d</strong> delete and <strong>c</strong> <em>change</em> and those will be executed on the selection.</p>
@@ -179,11 +181,11 @@ To enter <em>Visual Block</em> the command is <strong>Ctr-v</strong>, this selec
 text vertically as well as horizontally.</p>
 </div>
 </div>
-<div id="outline-container-headline-10" class="outline-3">
-<h3 id="headline-10">
+<div id="outline-container-headline-10" class="outline-2">
+<h2 id="headline-10">
 Command mode
-</h3>
-<div id="outline-text-headline-10" class="outline-text-3">
+</h2>
+<div id="outline-text-headline-10" class="outline-text-2">
 <p>There is only one mode left to present, and we haven&#39;t learned how to save and exit Vim yet.
 To get into <em>Command Mode</em> press <strong>:</strong>, you&#39;ll notice that you can now write in a line similar to what we do for searching, but when you press <strong>Enter</strong> whatever you wrote will be executed.</p>
 <p>
@@ -240,19 +242,19 @@ This are the commands that you&#39;ll want to use more often:</p>
 </table>
 </div>
 </div>
-<div id="outline-container-headline-11" class="outline-3">
-<h3 id="headline-11">
+<div id="outline-container-headline-11" class="outline-2">
+<h2 id="headline-11">
 VIM grammar
-</h3>
-<div id="outline-text-headline-11" class="outline-text-3">
+</h2>
+<div id="outline-text-headline-11" class="outline-text-2">
 <p>Yes, Vim has grammar, and it probably is one of the most interesting parts about it, but if you didn&#39;t like English at school
 don&#39;t worry, you can also see this as a sort of programming language.
 To understand this, we&#39;ll divide Vim commands in 3 groups: Verbs, Modifiers and Nouns.</p>
-<div id="outline-container-headline-12" class="outline-4">
-<h4 id="headline-12">
+<div id="outline-container-headline-12" class="outline-3">
+<h3 id="headline-12">
 Verbs
-</h4>
-<div id="outline-text-headline-12" class="outline-text-4">
+</h3>
+<div id="outline-text-headline-12" class="outline-text-3">
 <table>
 <tbody>
 <tr>
@@ -299,11 +301,11 @@ Verbs
 </table>
 </div>
 </div>
-<div id="outline-container-headline-13" class="outline-4">
-<h4 id="headline-13">
+<div id="outline-container-headline-13" class="outline-3">
+<h3 id="headline-13">
 Modifiers
-</h4>
-<div id="outline-text-headline-13" class="outline-text-4">
+</h3>
+<div id="outline-text-headline-13" class="outline-text-3">
 <table>
 <tbody>
 <tr>
@@ -344,11 +346,11 @@ Modifiers
 </table>
 </div>
 </div>
-<div id="outline-container-headline-14" class="outline-4">
-<h4 id="headline-14">
+<div id="outline-container-headline-14" class="outline-3">
+<h3 id="headline-14">
 Noun
-</h4>
-<div id="outline-text-headline-14" class="outline-text-4">
+</h3>
+<div id="outline-text-headline-14" class="outline-text-3">
 <table>
 <tbody>
 <tr>
@@ -413,11 +415,11 @@ Noun
 </table>
 </div>
 </div>
-<div id="outline-container-headline-15" class="outline-4">
-<h4 id="headline-15">
+<div id="outline-container-headline-15" class="outline-3">
+<h3 id="headline-15">
 Make Sentences
-</h4>
-<div id="outline-text-headline-15" class="outline-text-4">
+</h3>
+<div id="outline-text-headline-15" class="outline-text-3">
 <p>Now that we know the parts to form a sentence let&#39;s make our first basic ones. You can use the number modifier with
 any command to repeat it set number of times. For example <strong>2w</strong> will move the cursor two words instead of one.
 Now with a verb, <strong>d2w</strong> will delete the current and next word. I&#39;m sure you are getting how this works, here you have some other examples:</p>
@@ -433,22 +435,22 @@ Now with a verb, <strong>d2w</strong> will delete the current and next word. I&#
 </div>
 </div>
 </div>
-<div id="outline-container-headline-16" class="outline-3">
-<h3 id="headline-16">
+<div id="outline-container-headline-16" class="outline-2">
+<h2 id="headline-16">
 The &#34;dot&#34; or repeat command
-</h3>
-<div id="outline-text-headline-16" class="outline-text-3">
+</h2>
+<div id="outline-text-headline-16" class="outline-text-2">
 <p>You can repeat the last command by pressing <strong>.</strong>, for example is you execute <strong>ciwhello&lt;ESC&gt;</strong> this will replace the word
 you&#39;re over with hello. If you then move to a different word and press <strong>.</strong> that last command will be repeated and the word
 would also be changed to &#34;hello&#34;. you can do this as many times as you want as long as you don&#39;t use any other command
 in between. The <em>dot</em> command can also be used with the number modifier, that way <strong>3.</strong> will be the same as <strong>…</strong>. </p>
 </div>
 </div>
-<div id="outline-container-headline-17" class="outline-3">
-<h3 id="headline-17">
+<div id="outline-container-headline-17" class="outline-2">
+<h2 id="headline-17">
 Macros
-</h3>
-<div id="outline-text-headline-17" class="outline-text-3">
+</h2>
+<div id="outline-text-headline-17" class="outline-text-2">
 <p>Macros are a little bit like an overpowered <em>dot</em> command, They allow us to record any number of commands and repeat
 them at will later.
 You may have noticed that the <em>dot</em> command only repeats the commands that modifies the text, it wont repeat the
@@ -472,22 +474,22 @@ If you wanted to repeat this with every line in a file the fastest way to do tha
 save the macro in a clean register, to clean the register &#34;a&#34; you can execute <strong>qaq</strong>.</p>
 </div>
 </div>
-<div id="outline-container-headline-18" class="outline-3">
-<h3 id="headline-18">
+<div id="outline-container-headline-18" class="outline-2">
+<h2 id="headline-18">
 Search and replace
-</h3>
-<div id="outline-text-headline-18" class="outline-text-3">
+</h2>
+<div id="outline-text-headline-18" class="outline-text-2">
 <p>The search and replace function in Vim is done through a command on <em>Command Mode</em>, that allows us to have a lot of
 control over it.
 The way you&#39;re probably going to use the most is this: <strong>:%s/bad/good/g</strong> this would change all words &#34;bad&#34; to &#34;good&#34; in the file.
 It already seems pretty easy to use, but if wee want to have a bit more control we can divide it in parts:
 <strong>:[range] s[ubstitute]/pattern/string/[flags] [count]</strong>
 where the parameters between brackets are optional</p>
-<div id="outline-container-headline-19" class="outline-4">
-<h4 id="headline-19">
+<div id="outline-container-headline-19" class="outline-3">
+<h3 id="headline-19">
 range
-</h4>
-<div id="outline-text-headline-19" class="outline-text-4">
+</h3>
+<div id="outline-text-headline-19" class="outline-text-3">
 <p>On our first example the range was &#34;%&#34;, that defines the whole file, but we can also omit it to execute the same thing
 on just one line. in a similar way you could do <strong>:1,10s/bad/good/g</strong> to execute the command in lines one to ten.
 while defining ranges you can use the next table and it&#39;s combinations:</p>
@@ -531,11 +533,11 @@ while defining ranges you can use the next table and it&#39;s combinations:</p>
 </table>
 </div>
 </div>
-<div id="outline-container-headline-20" class="outline-4">
-<h4 id="headline-20">
+<div id="outline-container-headline-20" class="outline-3">
+<h3 id="headline-20">
 flags
-</h4>
-<div id="outline-text-headline-20" class="outline-text-4">
+</h3>
+<div id="outline-text-headline-20" class="outline-text-3">
 <p>Flags can be combined as well, and aren&#39;t required.
 Using the previous example you can add a confirmation with the flag &#34;c&#34; <strong>:$s/bad/good/gc</strong></p>
 <table>
@@ -566,11 +568,11 @@ Using the previous example you can add a confirmation with the flag &#34;c&#34; 
 </table>
 </div>
 </div>
-<div id="outline-container-headline-21" class="outline-4">
-<h4 id="headline-21">
+<div id="outline-container-headline-21" class="outline-3">
+<h3 id="headline-21">
 Regular expressions 
-</h4>
-<div id="outline-text-headline-21" class="outline-text-4">
+</h3>
+<div id="outline-text-headline-21" class="outline-text-3">
 <p>You can use regular expressions inside the commands, this gives us a lot of flexibility.
 Notice that to use regex you need to add &#34;\&#34; before the expressions so they aren&#39;t counted as regular text
 Here are some examples:</p>
@@ -582,11 +584,11 @@ Here are some examples:</p>
 </div>
 </div>
 </div>
-<div id="outline-container-headline-22" class="outline-3">
-<h3 id="headline-22">
+<div id="outline-container-headline-22" class="outline-2">
+<h2 id="headline-22">
 The global command
-</h3>
-<div id="outline-text-headline-22" class="outline-text-3">
+</h2>
+<div id="outline-text-headline-22" class="outline-text-2">
 <p>The global command can also be quite useful, and if you understand how to use <em>substitute</em> it is very similar.
 The syntax is: <strong>:[rage]g/pattern/command</strong>
 Where <strong>pattern</strong> is what we are looking to match in the file and <strong>command</strong> is what we want to execute for
@@ -604,11 +606,11 @@ prefix to execute a normal mode command like in this example: <strong>:g/somethi
 the macro in register &#34;a&#34; for every line containing &#34;something&#34;.</p>
 </div>
 </div>
-<div id="outline-container-headline-23" class="outline-3">
-<h3 id="headline-23">
+<div id="outline-container-headline-23" class="outline-2">
+<h2 id="headline-23">
 Undo, redo and time-travel
-</h3>
-<div id="outline-text-headline-23" class="outline-text-3">
+</h2>
+<div id="outline-text-headline-23" class="outline-text-2">
 <p>Vim undo and redo functions works for the most part as you would expect, you can press <strong>u</strong> in normal mode to
 undo the last action and <strong>Ctr-r</strong> to redo it. You can also use <strong>u</strong> with a number modifier like <strong>3u</strong> to undo 3 steps.</p>
 <p>
@@ -648,11 +650,11 @@ move back and forward on your file edits not only one by one, but also by time i
 </table>
 </div>
 </div>
-<div id="outline-container-headline-24" class="outline-3">
-<h3 id="headline-24">
+<div id="outline-container-headline-24" class="outline-2">
+<h2 id="headline-24">
 Registers
-</h3>
-<div id="outline-text-headline-24" class="outline-text-3">
+</h2>
+<div id="outline-text-headline-24" class="outline-text-2">
 <p>We touched on registers while talking about macros and also while talking about the yank(copy) and delete commands. 
 You&#39;ll soon realize that a lot of commands are related to them.</p>
 <p>
@@ -663,11 +665,11 @@ You can add and print text from a register with the yank and paste commands. To 
 <p>
 To see the content of all the used registers you can use to command <strong>:reg</strong> or <strong>:register</strong>, you&#39;ll notice that there
 are quite a lot of things going on.</p>
-<div id="outline-container-headline-25" class="outline-4">
-<h4 id="headline-25">
+<div id="outline-container-headline-25" class="outline-3">
+<h3 id="headline-25">
 Yank, delete and numbered registers
-</h4>
-<div id="outline-text-headline-25" class="outline-text-4">
+</h3>
+<div id="outline-text-headline-25" class="outline-text-3">
 <p>You may have noticed when we talked about copy and deleting text that if you copy something and then delete some
 text, when you go to paste it, you would have the deleted text instead of what you copied. This can be solved thanks to registers.</p>
 <p>
@@ -679,11 +681,11 @@ Both deleted and yanked text gets saved in order in the other number registers, 
 yanked text is on <strong>1</strong>, the previous one is on <strong>2</strong>, the one before in <strong>3</strong> and so on.</p>
 </div>
 </div>
-<div id="outline-container-headline-26" class="outline-4">
-<h4 id="headline-26">
+<div id="outline-container-headline-26" class="outline-3">
+<h3 id="headline-26">
 Read only registers and search register
-</h4>
-<div id="outline-text-headline-26" class="outline-text-4">
+</h3>
+<div id="outline-text-headline-26" class="outline-text-3">
 <p>There are 4 read only registers, where the next information is saved:</p>
 <table>
 <tbody>
@@ -715,11 +717,11 @@ Read only registers and search register
 This isn&#39;t read only, but the last text you search will end up on the <strong>/</strong> register, as expected.</p>
 </div>
 </div>
-<div id="outline-container-headline-27" class="outline-4">
-<h4 id="headline-27">
+<div id="outline-container-headline-27" class="outline-3">
+<h3 id="headline-27">
 Alphabetic registers and macros
-</h4>
-<div id="outline-text-headline-27" class="outline-text-4">
+</h3>
+<div id="outline-text-headline-27" class="outline-text-3">
 <p>You may have realized already that macros are just strings of text saved on a register, and the <strong>@</strong> executes whatever is
 inside of them, you could save anything inside of those registers and even record macros without executing them before.
 With the command <strong>:let</strong> you can enter text directly inside a register like <strong>:let @a=&#39;hello&#39;</strong>.</p>
@@ -730,11 +732,11 @@ overwriting it. </p>
 </div>
 </div>
 </div>
-<div id="outline-container-headline-28" class="outline-3">
-<h3 id="headline-28">
+<div id="outline-container-headline-28" class="outline-2">
+<h2 id="headline-28">
 Splits
-</h3>
-<div id="outline-text-headline-28" class="outline-text-3">
+</h2>
+<div id="outline-text-headline-28" class="outline-text-2">
 <p>If you use a terminal that allows splits you could open another instance of Vim on a split and be over with it, but 
 using Vim&#39;s built in splits allows you to share registers and copy text form one file to another without much trouble.</p>
 <p>
@@ -785,11 +787,11 @@ This are the main commands that you need to know:</p>
 </table>
 </div>
 </div>
-<div id="outline-container-headline-29" class="outline-3">
-<h3 id="headline-29">
+<div id="outline-container-headline-29" class="outline-2">
+<h2 id="headline-29">
 Basic config
-</h3>
-<div id="outline-text-headline-29" class="outline-text-3">
+</h2>
+<div id="outline-text-headline-29" class="outline-text-2">
 <p>Now that we&#39;ve touched on most of the important parts of vim you probably want to change the default look and feel.
 You can do so on a file called <em>.vimrc</em> on your home directory.</p>
 <p>
@@ -836,11 +838,11 @@ To learn more about this options you can use <strong>:help</strong> <em>option</
 </div>
 </div>
 </div>
-<div id="outline-container-headline-30" class="outline-3">
-<h3 id="headline-30">
+<div id="outline-container-headline-30" class="outline-2">
+<h2 id="headline-30">
 Set up custom keybinds
-</h3>
-<div id="outline-text-headline-30" class="outline-text-3">
+</h2>
+<div id="outline-text-headline-30" class="outline-text-2">
 <p>If you keep using Vim as your main editor you&#39;ll end up wanting to change some keybinds or create new ones with macros
 that you use often. Luckily that is really easy to do following this syntax in your <em>.vimrc</em> :
 <strong>map_mode &lt;what_you_type&gt; &lt;what_is_executed&gt;</strong></p>
@@ -878,11 +880,11 @@ Here is a useful example for remapping the window resize commands in normal mode
 </div>
 </div>
 </div>
-<div id="outline-container-headline-31" class="outline-3">
-<h3 id="headline-31">
+<div id="outline-container-headline-31" class="outline-2">
+<h2 id="headline-31">
 Change theme
-</h3>
-<div id="outline-text-headline-31" class="outline-text-3">
+</h2>
+<div id="outline-text-headline-31" class="outline-text-2">
 <p>The default look and feel of Vim can be outdated, but just because it&#39;s a command line program doesn&#39;t mean it need to
 look like this.</p>
 <p>
@@ -906,11 +908,11 @@ If you want you background to be the same as the terminal you can also add this 
 </div>
 </div>
 </div>
-<div id="outline-container-headline-32" class="outline-3">
-<h3 id="headline-32">
+<div id="outline-container-headline-32" class="outline-2">
+<h2 id="headline-32">
 More plugins
-</h3>
-<div id="outline-text-headline-32" class="outline-text-3">
+</h2>
+<div id="outline-text-headline-32" class="outline-text-2">
 <p>Because Vim has been around for a long time and has a very active community you can find a lot of interesting plugins.</p>
 <p>
 Following the theme we are going to install a new modeline that looks more modern and goes well with the colorscheme.</p>
@@ -925,8 +927,6 @@ Because we are using a theme that is compatible with lightline, we can also add 
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>let g:lightline = {
 </span></span><span style="display:flex;"><span>      \ &#39;colorscheme&#39;: &#39;onedark&#39;,
 </span></span><span style="display:flex;"><span>      \ }</span></span></code></pre></div>
-</div>
-</div>
 </div>
 </div>
 </div>
