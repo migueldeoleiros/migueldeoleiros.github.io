@@ -1,6 +1,6 @@
 ---
-title: "How Vim can change the way you edit code"
-date: 2022-04-12T12:18:25+02:00
+title: "Vim introduction, form basic to advance"
+date: 2022-04-17
 toc: true
 tags:
   - tutorial
@@ -9,7 +9,7 @@ draft: false
 * What is Vim?
 According to the official website:
 *"Vim is a highly configurable text editor built to make creating and changing any kind of text very efficient"*
-So we know that Vim is a text editor that is designed with efficiency in mind, but what is the difference between Vim and any other editor? and why is it more efficient? \\
+So we know that Vim is a text editor that is designed with efficiency in mind, but what is the difference between Vim and any other editor? and why is it more efficient?
 
 If you've never heard of vim before you are most likely used to the classic way of editing text, where you type
 characters with the keys to form words and you have some extra functions convincing the *Ctr* and *Alt* keys,
@@ -36,7 +36,7 @@ keys that usually work for characters aren't typing anything in this case, this 
 ** Movement commands
 The very first commands that we are gonna learn are basic movements. One of the key functions of Vim is that
 when using it you won't ever need to touch a mouse. You may be used to the arrow keys, and you can also use
-them here, but when editing text quickly the best haw to move around is with *hjkl*, let me explain: \\
+them here, but when editing text quickly the best haw to move around is with *hjkl*, let me explain:
 
 If you are a gamer you'll know the classic *wasd*, *hjkl* is the counterpart of that on your left hand, but
 using only keys on the homerow to decrease movement, so *h* is left, *j* if up, *k* is down and *l* is right.
