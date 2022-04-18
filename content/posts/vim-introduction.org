@@ -17,12 +17,11 @@ like the classic *Ctr-c* and *Ctr-v* to copy and paste. Vim uses a completely di
 *Modal editing* where you have different "modes" that change the function of each key. This can be a little
 hard to understand at first so I advice to follow this article trying the commands at the same time on the editor.
 
-If you are using Linux you may have it already installed, in any other case you can install it using your OS repos or from
-here [[https://www.vim.org/download.php][here]].
+If you are using Linux you may have it already installed, in any other case you can install it using your OS repos or from [[https://www.vim.org/download.php][here]].
 
 * Modes in Vim
 As stated before, Vim uses a Modal editing approach where keys can change it's function depending on the mode that you're in.
-There ate 4 mayor modes, although you'll find that there are more variants in a bit.
+There are 4 major modes, although you'll find that there are more variants in a bit.
 This are:
 - Normal mode
 - Insert mode
@@ -36,7 +35,7 @@ keys that usually work for characters aren't typing anything in this case, this 
 * Movement commands
 The very first commands that we are gonna learn are basic movements. One of the key functions of Vim is that
 when using it you won't ever need to touch a mouse. You may be used to the arrow keys, and you can also use
-them here, but when editing text quickly the best haw to move around is with *hjkl*, let me explain:
+them here, but when editing text quickly the best way to move around is with *hjkl*, let me explain:
 
 If you are a gamer you'll know the classic *wasd*, *hjkl* is the counterpart of that on your left hand, but
 using only keys on the homerow to decrease movement, so *h* is left, *j* if up, *k* is down and *l* is right.
