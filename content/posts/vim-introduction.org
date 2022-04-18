@@ -1,5 +1,5 @@
 ---
-title: "Vim introduction, form basic to advance"
+title: "Vim introduction, from basic to advance"
 date: 2022-04-17
 toc: true
 tags:
