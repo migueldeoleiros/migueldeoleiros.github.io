@@ -68,7 +68,7 @@ You won't be able to use it without installing plugins for your desired formats 
 It supports not only pdf, but also PostScript, DjVu and Comic books.
 You'll find more information on it's ArchWiki page [[https://wiki.archlinux.org/title/Zathura][here]]. 
 
-https://github.com/pwmt/zathura
+[[https://github.com/pwmt/zathura]]
 
 * Command line programs
 If you are a Vim user chances are you also enjoy using the terminal for most of your work. This are some of the apps and
