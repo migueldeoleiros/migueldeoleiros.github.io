@@ -15,8 +15,7 @@ like the classic <strong>Ctr-c</strong> and <strong>Ctr-v</strong> to copy and p
 <strong>Modal editing</strong> where you have different &#34;modes&#34; that change the function of each key. This can be a little
 hard to understand at first so I advice to follow this article trying the commands at the same time on the editor.</p>
 <p>
-If you are using Linux you may have it already installed, in any other case you can install it using your OS repos or from
-here <a href="https://www.vim.org/download.php">here</a>.</p>
+If you are using Linux you may have it already installed, in any other case you can install it using your OS repos or from <a href="https://www.vim.org/download.php">here</a>.</p>
 </div>
 </div>
 <div id="outline-container-headline-2" class="outline-2">
@@ -25,7 +24,7 @@ Modes in Vim
 </h2>
 <div id="outline-text-headline-2" class="outline-text-2">
 <p>As stated before, Vim uses a Modal editing approach where keys can change it&#39;s function depending on the mode that you&#39;re in.
-There ate 4 mayor modes, although you&#39;ll find that there are more variants in a bit.
+There are 4 major modes, although you&#39;ll find that there are more variants in a bit.
 This are:</p>
 <ul>
 <li>Normal mode</li>
@@ -51,7 +50,7 @@ Movement commands
 <div id="outline-text-headline-4" class="outline-text-2">
 <p>The very first commands that we are gonna learn are basic movements. One of the key functions of Vim is that
 when using it you won&#39;t ever need to touch a mouse. You may be used to the arrow keys, and you can also use
-them here, but when editing text quickly the best haw to move around is with <strong>hjkl</strong>, let me explain:</p>
+them here, but when editing text quickly the best way to move around is with <strong>hjkl</strong>, let me explain:</p>
 <p>
 If you are a gamer you&#39;ll know the classic <strong>wasd</strong>, <strong>hjkl</strong> is the counterpart of that on your left hand, but
 using only keys on the homerow to decrease movement, so <strong>h</strong> is left, <strong>j</strong> if up, <strong>k</strong> is down and <strong>l</strong> is right.
