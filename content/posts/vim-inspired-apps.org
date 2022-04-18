@@ -1,0 +1,101 @@
+---
+title: "Vim inspired apps to cover your workflow"
+date: 2022-04-18
+toc: true
+tags:
+  - showcase
+draft: false
+---
+
+As a Vim user it's no surprise to find yourself using Vim commands where you shouldn't, pressing ESC when you should have
+pressed Enter, and writhing gibberish like "jjjkkkjkjkj" when you try to scroll on some regular app.
+
+Luckily because Vim has a huge community of mostly developers, you can find tons of plugins and apps that are designed
+with Vim keybinds in mind to make our life a little bit easier.
+
+This are all *Linux* apps, although some of them may be available in other platforms as well.
+
+* File manager
+If you're using vim as your main editor you could of course use the built in file manager or just do everything by command
+line, but for some tasks you may want something more powerful without giving up on the convenience of having
+everything inside the console.
+
+** Ranger
+Ranger is a console file manager that provides a curses interface with a view o the hierarchy of directories.
+It also give you a file preview for text, and optionally images, pdfs and videos. 
+It not only has all the keybinds that you would expect, but also builds on them and provide some really usefully features
+like bulk renaming. 
+https://ranger.github.io/
+
+[[/images/vim-apps/ranger.png]]
+
+** Vifm
+Vifm provides a similar set of features as Ranger, but I would encourage people to try both to see which one you like
+better.
+Vifm is a little bit more true to the Vim way of doing things, and it's even configured with the same syntax.
+https://github.com/vifm/vifm
+
+[[/images/vim-apps/vifm.gif]]
+
+* Web browser
+Now a days you could live inside a browser, you got ChromeOS as an example.
+And given that we are going to spend a lot of time on it, may as well customize it.
+Luckily we got lot's of options to make your browser feel a bit more like Vim. The biggest selling point on this is allowing you
+a keyboard centric navigation and using you mouse as less as possible.
+
+** Qutebrowser
+Qutebrowser is one of the many simplified Vim inspired browsers out there. It has a clean look and a intuitive way of navigating web pages with only your keyboard. It's also easy to customize and change colors and fonts.
+The only drawback is the lack of plugin support, as you won't be able to use something like UBlockOrigin or fast
+translation. It has support for greaseMonkey scripts and some basic adblock integration so if you like a fast and simple
+experience you would most likely enjoy it.
+https://qutebrowser.org/
+
+if you don't like the default look, check out it's Dracula theme https://draculatheme.com/qutebrowser
+
+[[/images/vim-apps/qutebrowser.png]]
+
+** Plugins for Firefox and Chrome
+If you want a more complete browser experience, although this isn't as easy to customize as something like Qutebrowser.
+You can get a lot of the functionalities on your regular browser like Firefox or Chrome.
+
+For Firefox you have Vim Vixen https://github.com/ueokande/vim-vixen 
+For Chromium base browsers cVim https://github.com/1995eaton/chromium-vim/
+
+This are just a couple of options that I've used, but you'll find a handful more with a quick search.
+
+* Zathura pdf viewer 
+Zathura is a minimal looking document viewer with Vim like keybinds and a keyboard centered interface.
+You won't be able to use it without installing plugins for your desired formats to read.
+It supports not only pdf, but also PostScript, DjVu and Comic books.
+You'll find more information on it's ArchWiki page https://wiki.archlinux.org/title/Zathura
+
+https://github.com/pwmt/zathura
+
+* Command line programs
+If you are a Vim user chances are you also enjoy using the terminal for most of your work. This are some of the apps and
+modifications I use that integrate well with a Vim workflow.
+
+** Calcuse Calendar and todos
+Calcurse is a calendar and scheduling application. If you use any todo list management tool or calendar, you know how
+useful they can be to keep track of things. Calcurse allow you to have all that inside the terminal, and saves notes on plain
+text that you can edit with Vim.
+https://calcurse.org/
+
+[[/images/vim-apps/calcurse.png]]
+
+** Vi-mode on bash and zsh
+You may not know that you can enable Vi-mode on both the Bash and Zsh shell. this allow you to edit long commands a little easier. If you want to go a farther there are some Zsh plugins that improve this functionality.
+
+For *Bash* is as easy as adding "/set -o vi/" to your /.bashrc/
+
+*Zsh* isn't any harder, you just need to add "/bindkey -v/" to your /.zshrc/
+If you want a better Vi-mode you can check out this plugin: https://github.com/jeffreytse/zsh-vi-mode
+
+** Tmux (?)
+Tmux is a terminal multiplexer. It allows you to make windows and tabs inside the terminal and handling sessions.
+It's session functionality is great when you're working on multiple things with Vim, as you can close one session and open
+it latter without having to set up everything again. It has a lot more to offer that I wont be able to cover here, but you can
+check out it's wiki https://github.com/tmux/tmux/wiki
+
+Tmux default keybinds are far from ideal, and nowhere close to Vim-like, but you can set up ones yourself and add plugins
+to improve it. You can check out my [[https://github.com/migueldeoleiros/dotfiles/tree/master/.config/tmux][dotfiles]] for inspiration.
