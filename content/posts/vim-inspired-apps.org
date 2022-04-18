@@ -41,7 +41,7 @@ https://github.com/vifm/vifm
 Now a days you could live inside a browser, you got ChromeOS as an example.
 And given that we are going to spend a lot of time on it, may as well customize it.
 Luckily we got lot's of options to make your browser feel a bit more like Vim. The biggest selling point on this is allowing you
-a keyboard centric navigation and using you mouse as less as possible.
+a keyboard driven navigation and using you mouse as less as possible.
 
 ** Qutebrowser
 Qutebrowser is one of the many simplified Vim inspired browsers out there. It has a clean look and a intuitive way of navigating web pages with only your keyboard. It's also easy to customize and change colors and fonts.
@@ -50,24 +50,23 @@ translation. It has support for greaseMonkey scripts and some basic adblock inte
 experience you would most likely enjoy it.
 https://qutebrowser.org/
 
-if you don't like the default look, check out it's Dracula theme https://draculatheme.com/qutebrowser
-
 [[/images/vim-apps/qutebrowser.png]]
+if you don't like the default look, check out it's Dracula theme https://draculatheme.com/qutebrowser
 
 ** Plugins for Firefox and Chrome
 If you want a more complete browser experience, although this isn't as easy to customize as something like Qutebrowser.
 You can get a lot of the functionalities on your regular browser like Firefox or Chrome.
 
-For Firefox you have Vim Vixen https://github.com/ueokande/vim-vixen 
-For Chromium base browsers cVim https://github.com/1995eaton/chromium-vim/
+For *Firefox* you have [[https://github.com/ueokande/vim-vixen][Vim Vixen]] 
+For *Chromium* base browsers [[https://github.com/1995eaton/chromium-vim/][cVim]]
 
 This are just a couple of options that I've used, but you'll find a handful more with a quick search.
 
 * Zathura pdf viewer 
-Zathura is a minimal looking document viewer with Vim like keybinds and a keyboard centered interface.
+Zathura is a minimal looking document viewer with Vim like keybinds and a keyboard driven interface.
 You won't be able to use it without installing plugins for your desired formats to read.
 It supports not only pdf, but also PostScript, DjVu and Comic books.
-You'll find more information on it's ArchWiki page https://wiki.archlinux.org/title/Zathura
+You'll find more information on it's ArchWiki page [[https://wiki.archlinux.org/title/Zathura][here]]. 
 
 https://github.com/pwmt/zathura
 
@@ -81,7 +80,7 @@ useful they can be to keep track of things. Calcurse allow you to have all that 
 text that you can edit with Vim.
 https://calcurse.org/
 
-[[/images/vim-apps/calcurse.png]]
+[[/images/vim-apps/calcurse.gif]]
 
 ** Vi-mode on bash and zsh
 You may not know that you can enable Vi-mode on both the Bash and Zsh shell. this allow you to edit long commands a little easier. If you want to go a farther there are some Zsh plugins that improve this functionality.
@@ -91,7 +90,7 @@ For *Bash* is as easy as adding "/set -o vi/" to your /.bashrc/
 *Zsh* isn't any harder, you just need to add "/bindkey -v/" to your /.zshrc/
 If you want a better Vi-mode you can check out this plugin: https://github.com/jeffreytse/zsh-vi-mode
 
-** Tmux (?)
+** Tmux
 Tmux is a terminal multiplexer. It allows you to make windows and tabs inside the terminal and handling sessions.
 It's session functionality is great when you're working on multiple things with Vim, as you can close one session and open
 it latter without having to set up everything again. It has a lot more to offer that I wont be able to cover here, but you can
