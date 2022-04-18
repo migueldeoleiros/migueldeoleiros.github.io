@@ -55,7 +55,7 @@ them here, but when editing text quickly the best haw to move around is with <st
 <p>
 If you are a gamer you&#39;ll know the classic <strong>wasd</strong>, <strong>hjkl</strong> is the counterpart of that on your left hand, but
 using only keys on the homerow to decrease movement, so <strong>h</strong> is left, <strong>j</strong> if up, <strong>k</strong> is down and <strong>l</strong> is right.
-Now that you can move the cursor one character at a time, but that isn&#39;t very efficient. To fix that Vim divides
+Now you can move the cursor one character at a time, but that isn&#39;t very efficient. To fix that Vim divides
 the text in units, one unit could be a character, but it could also be a word or a line. </p>
 <table>
 <thead>
@@ -738,7 +738,7 @@ Splits
 </h2>
 <div id="outline-text-headline-28" class="outline-text-2">
 <p>If you use a terminal that allows splits you could open another instance of Vim on a split and be over with it, but 
-using Vim&#39;s built in splits allows you to share registers and copy text form one file to another without much trouble.</p>
+using Vim&#39;s built in splits allows you to share registers and copy text from one file to another without much trouble.</p>
 <p>
 This are the main commands that you need to know:</p>
 <table>
