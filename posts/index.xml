@@ -53,7 +53,7 @@ Web browser
 <p>Now a days you could live inside a browser, you got ChromeOS as an example.
 And given that we are going to spend a lot of time on it, may as well customize it.
 Luckily we got lot&#39;s of options to make your browser feel a bit more like Vim. The biggest selling point on this is allowing you
-a keyboard centric navigation and using you mouse as less as possible.</p>
+a keyboard driven navigation and using you mouse as less as possible.</p>
 <div id="outline-container-headline-5" class="outline-3">
 <h3 id="headline-5">
 Qutebrowser
@@ -65,9 +65,8 @@ translation. It has support for greaseMonkey scripts and some basic adblock inte
 experience you would most likely enjoy it.
 <a href="https://qutebrowser.org/">https://qutebrowser.org/</a></p>
 <p>
+<img src="/images/vim-apps/qutebrowser.png" alt="/images/vim-apps/qutebrowser.png" title="/images/vim-apps/qutebrowser.png" />
 if you don&#39;t like the default look, check out it&#39;s Dracula theme <a href="https://draculatheme.com/qutebrowser">https://draculatheme.com/qutebrowser</a></p>
-<p>
-<img src="/images/vim-apps/qutebrowser.png" alt="/images/vim-apps/qutebrowser.png" title="/images/vim-apps/qutebrowser.png" /></p>
 </div>
 </div>
 <div id="outline-container-headline-6" class="outline-3">
@@ -78,8 +77,8 @@ Plugins for Firefox and Chrome
 <p>If you want a more complete browser experience, although this isn&#39;t as easy to customize as something like Qutebrowser.
 You can get a lot of the functionalities on your regular browser like Firefox or Chrome.</p>
 <p>
-For Firefox you have Vim Vixen <a href="https://github.com/ueokande/vim-vixen">https://github.com/ueokande/vim-vixen</a> 
-For Chromium base browsers cVim <a href="https://github.com/1995eaton/chromium-vim/">https://github.com/1995eaton/chromium-vim/</a></p>
+For <strong>Firefox</strong> you have <a href="https://github.com/ueokande/vim-vixen">Vim Vixen</a> 
+For <strong>Chromium</strong> base browsers <a href="https://github.com/1995eaton/chromium-vim/">cVim</a></p>
 <p>
 This are just a couple of options that I&#39;ve used, but you&#39;ll find a handful more with a quick search.</p>
 </div>
@@ -91,10 +90,10 @@ This are just a couple of options that I&#39;ve used, but you&#39;ll find a hand
 Zathura pdf viewer 
 </h2>
 <div id="outline-text-headline-7" class="outline-text-2">
-<p>Zathura is a minimal looking document viewer with Vim like keybinds and a keyboard centered interface.
+<p>Zathura is a minimal looking document viewer with Vim like keybinds and a keyboard driven interface.
 You won&#39;t be able to use it without installing plugins for your desired formats to read.
 It supports not only pdf, but also PostScript, DjVu and Comic books.
-You&#39;ll find more information on it&#39;s ArchWiki page <a href="https://wiki.archlinux.org/title/Zathura">https://wiki.archlinux.org/title/Zathura</a></p>
+You&#39;ll find more information on it&#39;s ArchWiki page <a href="https://wiki.archlinux.org/title/Zathura">here</a>. </p>
 <p>
 https://github.com/pwmt/zathura</p>
 </div>
@@ -116,7 +115,7 @@ useful they can be to keep track of things. Calcurse allow you to have all that 
 text that you can edit with Vim.
 <a href="https://calcurse.org/">https://calcurse.org/</a></p>
 <p>
-<img src="/images/vim-apps/calcurse.png" alt="/images/vim-apps/calcurse.png" title="/images/vim-apps/calcurse.png" /></p>
+<img src="/images/vim-apps/calcurse.gif" alt="/images/vim-apps/calcurse.gif" title="/images/vim-apps/calcurse.gif" /></p>
 </div>
 </div>
 <div id="outline-container-headline-10" class="outline-3">
@@ -134,7 +133,7 @@ If you want a better Vi-mode you can check out this plugin: <a href="https://git
 </div>
 <div id="outline-container-headline-11" class="outline-3">
 <h3 id="headline-11">
-Tmux (?)
+Tmux
 </h3>
 <div id="outline-text-headline-11" class="outline-text-3">
 <p>Tmux is a terminal multiplexer. It allows you to make windows and tabs inside the terminal and handling sessions.
