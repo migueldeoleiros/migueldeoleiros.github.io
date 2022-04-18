@@ -1,4 +1,154 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Miguel López López</title><link>http://migueldeoleiros.github.io/posts/</link><description>Recent content in Posts on Miguel López López</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Sun, 17 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://migueldeoleiros.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Vim introduction, from basic to advance</title><link>http://migueldeoleiros.github.io/posts/vim-introduction/</link><pubDate>Sun, 17 Apr 2022 00:00:00 +0000</pubDate><guid>http://migueldeoleiros.github.io/posts/vim-introduction/</guid><description>What is Vim? According to the official website: &amp;#34;Vim is a highly configurable text editor built to make creating and changing any kind of text very efficient&amp;#34; So we know that Vim is a text editor that is designed with efficiency in mind, but what is the difference between Vim and any other editor? and why is it more efficient?
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Miguel López López</title><link>http://migueldeoleiros.github.io/posts/</link><description>Recent content in Posts on Miguel López López</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Mon, 18 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://migueldeoleiros.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Vim inspired apps to cover your workflow</title><link>http://migueldeoleiros.github.io/posts/vim-inspired-apps/</link><pubDate>Mon, 18 Apr 2022 00:00:00 +0000</pubDate><guid>http://migueldeoleiros.github.io/posts/vim-inspired-apps/</guid><description>As a Vim user it&amp;#39;s no surprise to find yourself using Vim commands where you shouldn&amp;#39;t, pressing ESC when you should have pressed Enter, and writhing gibberish like &amp;#34;jjjkkkjkjkj&amp;#34; when you try to scroll on some regular app.
+Luckily because Vim has a huge community of mostly developers, you can find tons of plugins and apps that are designed with Vim keybinds in mind to make our life a little bit easier.</description><content type="html"><![CDATA[
+<p>
+As a Vim user it&#39;s no surprise to find yourself using Vim commands where you shouldn&#39;t, pressing ESC when you should have
+pressed Enter, and writhing gibberish like &#34;jjjkkkjkjkj&#34; when you try to scroll on some regular app.</p>
+<p>
+Luckily because Vim has a huge community of mostly developers, you can find tons of plugins and apps that are designed
+with Vim keybinds in mind to make our life a little bit easier.</p>
+<p>
+This are all <strong>Linux</strong> apps, although some of them may be available in other platforms as well.</p>
+<div id="outline-container-headline-1" class="outline-2">
+<h2 id="headline-1">
+File manager
+</h2>
+<div id="outline-text-headline-1" class="outline-text-2">
+<p>If you&#39;re using vim as your main editor you could of course use the built in file manager or just do everything by command
+line, but for some tasks you may want something more powerful without giving up on the convenience of having
+everything inside the console.</p>
+<div id="outline-container-headline-2" class="outline-3">
+<h3 id="headline-2">
+Ranger
+</h3>
+<div id="outline-text-headline-2" class="outline-text-3">
+<p>Ranger is a console file manager that provides a curses interface with a view o the hierarchy of directories.
+It also give you a file preview for text, and optionally images, pdfs and videos. 
+It not only has all the keybinds that you would expect, but also builds on them and provide some really usefully features
+like bulk renaming. 
+<a href="https://ranger.github.io/">https://ranger.github.io/</a></p>
+<p>
+<img src="/images/vim-apps/ranger.png" alt="/images/vim-apps/ranger.png" title="/images/vim-apps/ranger.png" /></p>
+</div>
+</div>
+<div id="outline-container-headline-3" class="outline-3">
+<h3 id="headline-3">
+Vifm
+</h3>
+<div id="outline-text-headline-3" class="outline-text-3">
+<p>Vifm provides a similar set of features as Ranger, but I would encourage people to try both to see which one you like
+better.
+Vifm is a little bit more true to the Vim way of doing things, and it&#39;s even configured with the same syntax.
+<a href="https://github.com/vifm/vifm">https://github.com/vifm/vifm</a></p>
+<p>
+<img src="/images/vim-apps/vifm.gif" alt="/images/vim-apps/vifm.gif" title="/images/vim-apps/vifm.gif" /></p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-4" class="outline-2">
+<h2 id="headline-4">
+Web browser
+</h2>
+<div id="outline-text-headline-4" class="outline-text-2">
+<p>Now a days you could live inside a browser, you got ChromeOS as an example.
+And given that we are going to spend a lot of time on it, may as well customize it.
+Luckily we got lot&#39;s of options to make your browser feel a bit more like Vim. The biggest selling point on this is allowing you
+a keyboard centric navigation and using you mouse as less as possible.</p>
+<div id="outline-container-headline-5" class="outline-3">
+<h3 id="headline-5">
+Qutebrowser
+</h3>
+<div id="outline-text-headline-5" class="outline-text-3">
+<p>Qutebrowser is one of the many simplified Vim inspired browsers out there. It has a clean look and a intuitive way of navigating web pages with only your keyboard. It&#39;s also easy to customize and change colors and fonts.
+The only drawback is the lack of plugin support, as you won&#39;t be able to use something like UBlockOrigin or fast
+translation. It has support for greaseMonkey scripts and some basic adblock integration so if you like a fast and simple
+experience you would most likely enjoy it.
+<a href="https://qutebrowser.org/">https://qutebrowser.org/</a></p>
+<p>
+if you don&#39;t like the default look, check out it&#39;s Dracula theme <a href="https://draculatheme.com/qutebrowser">https://draculatheme.com/qutebrowser</a></p>
+<p>
+<img src="/images/vim-apps/qutebrowser.png" alt="/images/vim-apps/qutebrowser.png" title="/images/vim-apps/qutebrowser.png" /></p>
+</div>
+</div>
+<div id="outline-container-headline-6" class="outline-3">
+<h3 id="headline-6">
+Plugins for Firefox and Chrome
+</h3>
+<div id="outline-text-headline-6" class="outline-text-3">
+<p>If you want a more complete browser experience, although this isn&#39;t as easy to customize as something like Qutebrowser.
+You can get a lot of the functionalities on your regular browser like Firefox or Chrome.</p>
+<p>
+For Firefox you have Vim Vixen <a href="https://github.com/ueokande/vim-vixen">https://github.com/ueokande/vim-vixen</a> 
+For Chromium base browsers cVim <a href="https://github.com/1995eaton/chromium-vim/">https://github.com/1995eaton/chromium-vim/</a></p>
+<p>
+This are just a couple of options that I&#39;ve used, but you&#39;ll find a handful more with a quick search.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-headline-7" class="outline-2">
+<h2 id="headline-7">
+Zathura pdf viewer 
+</h2>
+<div id="outline-text-headline-7" class="outline-text-2">
+<p>Zathura is a minimal looking document viewer with Vim like keybinds and a keyboard centered interface.
+You won&#39;t be able to use it without installing plugins for your desired formats to read.
+It supports not only pdf, but also PostScript, DjVu and Comic books.
+You&#39;ll find more information on it&#39;s ArchWiki page <a href="https://wiki.archlinux.org/title/Zathura">https://wiki.archlinux.org/title/Zathura</a></p>
+<p>
+https://github.com/pwmt/zathura</p>
+</div>
+</div>
+<div id="outline-container-headline-8" class="outline-2">
+<h2 id="headline-8">
+Command line programs
+</h2>
+<div id="outline-text-headline-8" class="outline-text-2">
+<p>If you are a Vim user chances are you also enjoy using the terminal for most of your work. This are some of the apps and
+modifications I use that integrate well with a Vim workflow.</p>
+<div id="outline-container-headline-9" class="outline-3">
+<h3 id="headline-9">
+Calcuse Calendar and todos
+</h3>
+<div id="outline-text-headline-9" class="outline-text-3">
+<p>Calcurse is a calendar and scheduling application. If you use any todo list management tool or calendar, you know how
+useful they can be to keep track of things. Calcurse allow you to have all that inside the terminal, and saves notes on plain
+text that you can edit with Vim.
+<a href="https://calcurse.org/">https://calcurse.org/</a></p>
+<p>
+<img src="/images/vim-apps/calcurse.png" alt="/images/vim-apps/calcurse.png" title="/images/vim-apps/calcurse.png" /></p>
+</div>
+</div>
+<div id="outline-container-headline-10" class="outline-3">
+<h3 id="headline-10">
+Vi-mode on bash and zsh
+</h3>
+<div id="outline-text-headline-10" class="outline-text-3">
+<p>You may not know that you can enable Vi-mode on both the Bash and Zsh shell. this allow you to edit long commands a little easier. If you want to go a farther there are some Zsh plugins that improve this functionality.</p>
+<p>
+For <strong>Bash</strong> is as easy as adding &#34;<em>set -o vi</em>&#34; to your <em>.bashrc</em></p>
+<p>
+<strong>Zsh</strong> isn&#39;t any harder, you just need to add &#34;<em>bindkey -v</em>&#34; to your <em>.zshrc</em>
+If you want a better Vi-mode you can check out this plugin: <a href="https://github.com/jeffreytse/zsh-vi-mode">https://github.com/jeffreytse/zsh-vi-mode</a></p>
+</div>
+</div>
+<div id="outline-container-headline-11" class="outline-3">
+<h3 id="headline-11">
+Tmux (?)
+</h3>
+<div id="outline-text-headline-11" class="outline-text-3">
+<p>Tmux is a terminal multiplexer. It allows you to make windows and tabs inside the terminal and handling sessions.
+It&#39;s session functionality is great when you&#39;re working on multiple things with Vim, as you can close one session and open
+it latter without having to set up everything again. It has a lot more to offer that I wont be able to cover here, but you can
+check out it&#39;s wiki <a href="https://github.com/tmux/tmux/wiki">https://github.com/tmux/tmux/wiki</a></p>
+<p>
+Tmux default keybinds are far from ideal, and nowhere close to Vim-like, but you can set up ones yourself and add plugins
+to improve it. You can check out my <a href="https://github.com/migueldeoleiros/dotfiles/tree/master/.config/tmux">dotfiles</a> for inspiration.</p>
+</div>
+</div>
+</div>
+</div>
+]]></content></item><item><title>Vim introduction, from basic to advance</title><link>http://migueldeoleiros.github.io/posts/vim-introduction/</link><pubDate>Sun, 17 Apr 2022 00:00:00 +0000</pubDate><guid>http://migueldeoleiros.github.io/posts/vim-introduction/</guid><description>What is Vim? According to the official website: &amp;#34;Vim is a highly configurable text editor built to make creating and changing any kind of text very efficient&amp;#34; So we know that Vim is a text editor that is designed with efficiency in mind, but what is the difference between Vim and any other editor? and why is it more efficient?
 If you&amp;#39;ve never heard of vim before you are most likely used to the classic way of editing text, where you type characters with the keys to form words and you have some extra functions convincing the Ctr and Alt keys, like the classic Ctr-c and Ctr-v to copy and paste.</description><content type="html"><![CDATA[
 <div id="outline-container-headline-1" class="outline-2">
 <h2 id="headline-1">
