@@ -94,9 +94,9 @@ Vim. Copy is called /yank/ and the command for that is *y*, paste is a little mo
 text we'll use *d* as in delete. In Vim, every time you delete text it's saved in a register, so you can paste it afterwards,
 that's why there isn't a "cut" command.
 
-If you try them you'll probably noticed that this three commands work in a similar way to the *c* /change/ command, but
-we'll see you another way of combining them this time. You can repeat the command to use it in a line, so *yy* yanks a
-line and *pp* pastes it, same thing with *dd* to delete a line.
+If you try them you'll probably noticed that both yank and delete commands work in a similar way to the *c* /change/ command, but
+we'll see another way of combining them this time. You can repeat the command to use it in a line, so *yy* yanks a
+line, and  *dd* deletes it, now you can paste them with *p*.
 
 Unless you want to move everything one line at a time you probably want a better way to select text, this is where /visual mode/ comes handy.
 
@@ -118,23 +118,25 @@ There is only one mode left to present, and we haven't learned how to save and e
 To get into /Command Mode/ press *:*, you'll notice that you can now write in a line similar to what we do for searching, but when you press *Enter* whatever you wrote will be executed.
 
 This are the commands that you'll want to use more often:
-|--------+-----------------------------------------|
-| :w     | write file                              |
-|--------+-----------------------------------------|
-| :w foo | write on file called "foo"              |
-|--------+-----------------------------------------|
-| :q     | quit vim                                |
-|--------+-----------------------------------------|
-| :q!    | quit vim without saving                 |
-|--------+-----------------------------------------|
-| :wq    | write file and quit vim                 |
-|--------+-----------------------------------------|
-| :e foo | open file called "foo"                  |
-|--------+-----------------------------------------|
-| :!ls   | execute ls command on system shell      |
-|--------+-----------------------------------------|
-| :r !ls | read output of ls command and insert it |
-|--------+-----------------------------------------|
+|---------+-----------------------------------------|
+| :help d | show help for command "d"               |
+|---------+-----------------------------------------|
+| :w      | write file                              |
+|---------+-----------------------------------------|
+| :w foo  | write on file called "foo"              |
+|---------+-----------------------------------------|
+| :q      | quit vim                                |
+|---------+-----------------------------------------|
+| :q!     | quit vim without saving                 |
+|---------+-----------------------------------------|
+| :wq     | write file and quit vim                 |
+|---------+-----------------------------------------|
+| :e foo  | open file called "foo"                  |
+|---------+-----------------------------------------|
+| :!ls    | execute ls command on system shell      |
+|---------+-----------------------------------------|
+| :r !ls  | read output of ls command and insert it |
+|---------+-----------------------------------------|
 
 
 * VIM grammar
@@ -285,7 +287,7 @@ Here are some examples:
 
 * The global command
 The global command can also be quite useful, and if you understand how to use /substitute/ it is very similar.
-The syntax is: *:[rage]g/pattern/command*
+The syntax is: *:[range]g/pattern/command*
 Where *pattern* is what we are looking to match in the file and *command* is what we want to execute for
 each line matching the pattern.
 As an example we can run *:g/error/d* to execute the command *d* /delete/ on every line that contains the word
@@ -334,8 +336,7 @@ are quite a lot of things going on.
 You may have noticed when we talked about copy and deleting text that if you copy something and then delete some
 text, when you go to paste it, you would have the deleted text instead of what you copied. This can be solved thanks to registers.
 
-Every time you copy or delete something this would go to the *"* register, which is the default when pasting (*""p* is the
-same as *pp*), but only yanking text gets saved on the *0* register by default.
+Every time you copy or delete something this would go to the *"* register, which is the default when pasting (*""p* is the same as *p*), but only yanking text gets saved on the *0* register by default.
 You could access the last copied text with *"0p* even after deleting something after.
 
 Both deleted and yanked text gets saved in order in the other number registers, so the last
@@ -401,7 +402,7 @@ set wildmenu                            " Better completion
 set encoding=utf-8                      " The encoding displayed
 set pumheight=10                        " Makes popup menu smaller
 set fileencoding=utf-8                  " The encoding written to file
-set ruler                			      " Show the cursor position all the time
+set ruler                	    	      " Show the cursor position all the time
 set cmdheight=1                         " More space for displaying messages
 set iskeyword+=-                        " treat dash separated words as a word text object"
 set mouse=a                             " Enable your mouse
@@ -423,6 +424,12 @@ set laststatus=2                        " Always display statusline
 set showcmd
 set ignorecase                          " Case insensitive search
 set smartcase                           " Overide ignorecase if the search includes upercase
+set timeoutlen=1000 ttimeoutlen=0       " Remove timeout when exiting insert mode
+
+" Change cursor shape for modes
+let &t_SI.="\e[5 q" "SI = INSERT mode
+let &t_SR.="\e[4 q" "SR = REPLACE mode
+let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
 #+end_src
 
 * Set up custom keybinds
