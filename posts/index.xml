@@ -304,9 +304,9 @@ Vim. Copy is called <em>yank</em> and the command for that is <strong>y</strong>
 text we&#39;ll use <strong>d</strong> as in delete. In Vim, every time you delete text it&#39;s saved in a register, so you can paste it afterwards,
 that&#39;s why there isn&#39;t a &#34;cut&#34; command.</p>
 <p>
-If you try them you&#39;ll probably noticed that this three commands work in a similar way to the <strong>c</strong> <em>change</em> command, but
-we&#39;ll see you another way of combining them this time. You can repeat the command to use it in a line, so <strong>yy</strong> yanks a
-line and <strong>pp</strong> pastes it, same thing with <strong>dd</strong> to delete a line.</p>
+If you try them you&#39;ll probably noticed that both yank and delete commands work in a similar way to the <strong>c</strong> <em>change</em> command, but
+we&#39;ll see another way of combining them this time. You can repeat the command to use it in a line, so <strong>yy</strong> yanks a
+line, and  <strong>dd</strong> deletes it, now you can paste them with <strong>p</strong>.</p>
 <p>
 Unless you want to move everything one line at a time you probably want a better way to select text, this is where <em>visual mode</em> comes handy.</p>
 </div>
@@ -339,6 +339,12 @@ To get into <em>Command Mode</em> press <strong>:</strong>, you&#39;ll notice th
 <p>
 This are the commands that you&#39;ll want to use more often:</p>
 <table>
+<tbody>
+<tr>
+<td>:help d</td>
+<td>show help for command &#34;d&#34;</td>
+</tr>
+</tbody>
 <tbody>
 <tr>
 <td>:w</td>
@@ -738,7 +744,7 @@ The global command
 </h2>
 <div id="outline-text-headline-22" class="outline-text-2">
 <p>The global command can also be quite useful, and if you understand how to use <em>substitute</em> it is very similar.
-The syntax is: <strong>:[rage]g/pattern/command</strong>
+The syntax is: <strong>:[range]g/pattern/command</strong>
 Where <strong>pattern</strong> is what we are looking to match in the file and <strong>command</strong> is what we want to execute for
 each line matching the pattern.
 As an example we can run <strong>:g/error/d</strong> to execute the command <strong>d</strong> <em>delete</em> on every line that contains the word
@@ -821,8 +827,7 @@ Yank, delete and numbered registers
 <p>You may have noticed when we talked about copy and deleting text that if you copy something and then delete some
 text, when you go to paste it, you would have the deleted text instead of what you copied. This can be solved thanks to registers.</p>
 <p>
-Every time you copy or delete something this would go to the <strong>&#34;</strong> register, which is the default when pasting (<strong>&#34;&#34;p</strong> is the
-same as <strong>pp</strong>), but only yanking text gets saved on the <strong>0</strong> register by default.
+Every time you copy or delete something this would go to the <strong>&#34;</strong> register, which is the default when pasting (<strong>&#34;&#34;p</strong> is the same as <strong>p</strong>), but only yanking text gets saved on the <strong>0</strong> register by default.
 You could access the last copied text with <strong>&#34;0p</strong> even after deleting something after.</p>
 <p>
 Both deleted and yanked text gets saved in order in the other number registers, so the last
@@ -956,7 +961,7 @@ To learn more about this options you can use <strong>:help</strong> <em>option</
 </span></span><span style="display:flex;"><span>set encoding=utf-8                      &#34; The encoding displayed
 </span></span><span style="display:flex;"><span>set pumheight=10                        &#34; Makes popup menu smaller
 </span></span><span style="display:flex;"><span>set fileencoding=utf-8                  &#34; The encoding written to file
-</span></span><span style="display:flex;"><span>set ruler                			      &#34; Show the cursor position all the time
+</span></span><span style="display:flex;"><span>set ruler                	    	      &#34; Show the cursor position all the time
 </span></span><span style="display:flex;"><span>set cmdheight=1                         &#34; More space for displaying messages
 </span></span><span style="display:flex;"><span>set iskeyword+=-                        &#34; treat dash separated words as a word text object&#34;
 </span></span><span style="display:flex;"><span>set mouse=a                             &#34; Enable your mouse
@@ -977,7 +982,13 @@ To learn more about this options you can use <strong>:help</strong> <em>option</
 </span></span><span style="display:flex;"><span>set laststatus=2                        &#34; Always display statusline 
 </span></span><span style="display:flex;"><span>set showcmd
 </span></span><span style="display:flex;"><span>set ignorecase                          &#34; Case insensitive search
-</span></span><span style="display:flex;"><span>set smartcase                           &#34; Overide ignorecase if the search includes upercase</span></span></code></pre></div>
+</span></span><span style="display:flex;"><span>set smartcase                           &#34; Overide ignorecase if the search includes upercase
+</span></span><span style="display:flex;"><span>set timeoutlen=1000 ttimeoutlen=0       &#34; Remove timeout when exiting insert mode
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&#34; Change cursor shape for modes
+</span></span><span style="display:flex;"><span>let &amp;t_SI.=&#34;\e[5 q&#34; &#34;SI = INSERT mode
+</span></span><span style="display:flex;"><span>let &amp;t_SR.=&#34;\e[4 q&#34; &#34;SR = REPLACE mode
+</span></span><span style="display:flex;"><span>let &amp;t_EI.=&#34;\e[1 q&#34; &#34;EI = NORMAL mode (ELSE)</span></span></code></pre></div>
 </div>
 </div>
 </div>
