@@ -39,16 +39,16 @@ paginate     = 10
 
     # Social icons
     [[params.social]]
-        name = "email"
-        url = "mailto:migueldeoleiros@gmail.com"
-
-    [[params.social]]
         name = "github"
         url = "https://github.com/migueldeoleiros"
 
     [[params.social]]
+        name = "email"
+        url = "mailto:migueldeoleiros@gmail.com"
+
+    [[params.social]]
         name = "linkedin"
-        url = "https://www.linkedin.com/in/miguel-l%C3%B3pez-l%C3%B3pez-960144236/"
+        url = "https://www.linkedin.com/in/migueldeoleiros"
 
 [taxonomies]
     category = "blog"
