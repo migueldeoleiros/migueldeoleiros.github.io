@@ -46,6 +46,10 @@ paginate     = 10
         name = "github"
         url = "https://github.com/migueldeoleiros"
 
+    [[params.social]]
+        name = "linkedin"
+        url = "https://www.linkedin.com/in/miguel-l%C3%B3pez-l%C3%B3pez-960144236/"
+
 [taxonomies]
     category = "blog"
     tag      = "tags"
