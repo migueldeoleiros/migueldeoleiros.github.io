@@ -6,7 +6,6 @@ tags:
   - tutorial
 draft: false
 ---
-[[/images/vim-introduction/vim-logo-png-transparent.png]]
 * What is Vim?
 According to the official website:
 *"Vim is a highly configurable text editor built to make creating and changing any kind of text very efficient"*
@@ -502,3 +501,5 @@ And because the new modeline includes a current mode indicator que can add this 
 #+begin_src
 set noshowmode                          " We don't need to see things like -- INSERT -- anymore
 #+end_src
+
+[[/images/vim-introduction/vim-logo-png-transparent.png]]
