@@ -1,7 +1,7 @@
 baseURL      = 'http://migueldeoleiros.github.io/'
 languageCode = 'en-us'
 title        = 'MiguelDeOleiros personal blog'
-theme        = 'hello-friend-ng'
+theme        = 'hello-friend-ml'
 paginate     = 10
 
 [author]

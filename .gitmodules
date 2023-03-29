@@ -1,3 +1,3 @@
-[submodule "themes/hello-friend-ng"]
-	path = themes/hello-friend-ng
-	url = https://github.com/rhazdon/hugo-theme-hello-friend-ng.git
+[submodule "themes/hello-friend-ml"]
+	path = themes/hello-friend-ml
+	url = https://github.com/migueldeoleiros/hugo-theme-hello-friend-ml.git
