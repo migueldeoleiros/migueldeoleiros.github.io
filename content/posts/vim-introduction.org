@@ -4,6 +4,11 @@ date: 2022-04-17
 toc: true
 tags:
   - tutorial
+  - vim
+
+feature_image: "/images/vim-introduction/vim-logo-png-transparent.png"
+summary: "Yet another tutorial on the basics of vim, this time focused on underderstanding fundamentals and why things work the way they do"
+
 draft: false
 ---
 * What is Vim?
@@ -502,4 +507,3 @@ And because the new modeline includes a current mode indicator que can add this 
 set noshowmode                          " We don't need to see things like -- INSERT -- anymore
 #+end_src
 
-[[/images/vim-introduction/vim-logo-png-transparent.png]]

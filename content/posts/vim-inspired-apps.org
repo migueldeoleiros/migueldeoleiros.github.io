@@ -4,6 +4,11 @@ date: 2022-04-18
 toc: true
 tags:
   - showcase
+  - vim
+
+feature_image: "/images/vim-apps/vifm.gif"
+summary: "A small list of some of my favorite Vim imspired apps to make life as a Vim user a bit easier"
+
 draft: false
 ---
 

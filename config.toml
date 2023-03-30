@@ -13,6 +13,8 @@ paginate     = 10
     dateformNum     = "2006-01-02"
     dateformNumTime = "2006-01-02 15:04"
 
+    description = "MiguelDeOleiros personal blog"
+
     # Subtitle for home
     homeSubtitle = "Computer science student and Linux entusiast"
 
