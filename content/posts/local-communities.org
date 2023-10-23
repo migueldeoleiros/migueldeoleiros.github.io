@@ -1,0 +1,43 @@
+---
+title: "Joining the local communities and how that is changing my life"
+date: 2023-10-22
+
+tags:
+  - thoughts
+  - communities
+  - life
+
+feature_image: "/images/local-communities/gpul.png"
+summary: "From local Linux meetups to high-tech conferences, discover how community connections transformed my world."
+
+draft: false
+---
+Until quite recently, I usually felt alone in this hobby of tinkering with Linux. Sure, I knew there were a lot of people out
+there who do the same thing as me, and I've been in online communities for a while. But meeting these people face to face
+is a whole other thing.
+
+My friends have always been into technology, but they are more into the mainstream gaming side of things and not so
+much into talking about how cool my new terminal color scheme is. However, since I came back to Spain and COVID is no
+longer a major concern, I've been attending all the meetups of my local communities, and I found some of the most amazing
+people in them.
+
+Last month, I had the opportunity to help out with the organization of AtlanticaConf, a tech conference centered on the community
+here in Galicia. There I met a lot of the members of the local enthusiast groups. People from GPUL, which is the local Linux user
+group at my university, and is full of people just like me, who have the distro-hopper virus and an allergy to Windows. But most
+importantly, people who are excited to share all this, to get together and do cool things. I was surprised about the diversity of the
+people in all senses, but all united by this part of us that loves to talk about tech and share our latest little discoveries.
+
+What motivated me to write this post is that last week I had the incredible opportunity to help out at the X.org Developer
+Conference in my home city of Coruña. It's such a privilege that we get to have such an important event here, thanks to Igalia.
+XDC is, for the most part, a very technical conference; being in a room with some of the brightest minds in the open-source
+world was, at first, quite striking. However, to my surprise, I could understand more than I initially thought I would.
+
+It was quite nice to feel the sense of community at XDC. Despite the highly technical nature of the event, people were
+so welcoming and open to explaining concepts to those of us who still have a lot to learn. I had the opportunity to chat with
+some of the brightest minds in the field, and it was a great way of introducing myself to a field that I soon want to join not
+only as a mere observer but as a developer too.
+
+I can't recommend enough that people join this kind of activity; we have such a privilege that there are so many opportunities in tech
+to meet passionate people like us. Attending a small meetup, even if you don't know what they are going to talk about, can really
+change your life. To the people at groups like Python Coruña and GPUL, I can't thank you enough for being so welcoming and making
+me feel like I can call this place home.
