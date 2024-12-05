@@ -16,7 +16,7 @@ paginate     = 10
     description = "MiguelDeOleiros personal blog"
 
     # Subtitle for home
-    homeSubtitle = "Computer science student and Linux enthusiast"
+    homeSubtitle = "Software Engineer and Linux Enthusiast"
 
     # Set disableReadOtherPosts to true in order to hide the links to other posts.
     disableReadOtherPosts = false
