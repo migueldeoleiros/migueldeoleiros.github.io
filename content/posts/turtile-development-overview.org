@@ -1,0 +1,54 @@
+---
+title: "Developing a Wayland compositor based in wlroots"
+date: 2024-12-16
+toc: false
+tags:
+  - wayland
+  - turtile
+
+feature_image: "https://raw.githubusercontent.com/migueldeoleiros/turtile/refs/heads/master/assets/logo_turtile.svg"
+summary: "In this post I'll share how I developed turtile, a simple Wayland compositor based in wlroots, my motivations, the challenges I faced, and what I'd do differently."
+
+draft: false
+---
+
+*I've been a full time Linux user for my entire time as a college student*, what started as a fun experiment years ago, slowly turned into a passion for all things *open source* and the amazing ecosystem that exists around them. Tinkering with my Linux desktop became part of my daily routine, and as someone that always had and inclination for design and art I love the idea of making your desktop unique.
+I played around with *dwm patching* like any good desktop minimalist should do, tried classics like *i3* or *bspwm*, and even lived for a while in *stumpwm* hoping to fuse my emacs workflow with the rest of my desktop experience. 
+
+It's not surprise that after I started to familiarize myself with more complex development, one of my first ideas was to develop *my own window manager*. I started to write some note on it around 2022, but at the time that was still a bit too much of an undertaking. It was only once I had to search for a project for my *bachelor's thesis* that it popped back into my head, and since *Wayland* is the future, may as well give this technology a go and learn what it takes to build a compositor.
+
+That's what lead me to start the development of *turtile*, a [[https://gitlab.freedesktop.org/wlroots/wlroots][wlroots]]-based Wayland compositor.
+turtile is by no means a project that aims to be revolutionary, or change the desktop scene, but it is my own compositor, and kind of like your kid playing football, it may not be the best, but you still love it.
+
+* The Process
+So, let's get into development, what were my *main challenges, things I've learned, and what I'd do differently*.
+
+I spent a lot of time reading about the *Wayland protocol* and *wlroots*, starting with the classic [[https://drewdevault.com/2017/06/10/Introduction-to-Wayland.html][Drew DeVault's blog posts]], which currently are a bit outdated, but still help understanding the basics. A source that is a lot more detailed is [[https://Wayland-book.com/][The Wayland Book]], and it was increasingly helpful to use as reference during development.
+
+I also spent a good amount of time reading code for other projects:
+- [[https://github.com/inclement/vivarium][Vivarium]] was pretty useful as reference, even though it hasn't been updated lately, it's a relatively small project and that helps a lot to understand the overall structure of how things work.
+- [[https://codeberg.org/dwl/dwl][dwl]] was a great reference too. I don't like the code style used for suckless projects, but it's undeniable that the small codebase makes it really easy to figure out.
+- I also took a look at some *X11 window managers' code*, most notably [[https://github.com/baskerville/bspwm][bspwm]], since I was interested in the way they manage commands with a socket. I ended up implementing a similar solution based on their code in turtile as well.
+
+With all that, one of my regrets still is *not spending enough time on the planning stage*. It's a complicated balance, since you don't wanna end up stuck in an endless loop of planning with nothing to show. A lot of the learning is done by testing things out and finding bugs that are hard to solve, but I would probably try some more *ambitious design choices* if I had to start over.
+
+I based my code in [[https://gitlab.freedesktop.org/wlroots/wlroots/-/tree/master/tinywl][tinywl]], the demo provided by the wlroots library. This made the initial development a lot easier, and it's also the main reason I used *C*.
+In hindsight this was not the best choice, I should have spent a bit more time understanding the code better and port it to a different language. Don't get me wrong, *C* is a great language, but it limited me in some aspects, like choosing a *config syntax*, and specially for managing *complex string concatenation* for messages as part of the command system.
+
+**  Methodology
+I also want to touch a bit on task management and methodology during development.
+
+This was one of my first times working on a project from scratch *by myself*, and since I had to ultimately submit it as my thesis, it was important to keep track of my work. I opted to track most things through GitHub with the addition of my local emacs org-mode notes.
+
+- *GitHub Projects* can be a great tool to manage all code related tasks, since it uses /issues/ as a base for each task and you can associate other things like pull requests to change the state of tasks in a kanban board.
+- *Org-mode* was still an invaluable tool. I may talk about this in a future blog post, but one of the things that I learned during my time as an intern in Igalia, and specially working with a codebase like Chromium was to make notes, *make notes about everything*. This is something that I also brought over to turtile, keeping notes at all time with small explanations on how I was developing different features, and explaining my reasoning, which helps a lot to clear your mind when you are stuck with some pesky bug.
+
+* Conclusions
+Over all, I was able to hit all of my main goals during the initial development, even if I would change the way I did things if I started over. I'm planning to keep development going, since currently turtile can't be seen as much more than a *tech demo*. The objective is to have a compositor that is actually desirable to use, although it will probably never be something as polished as *Hyprland* or *Sway*, I have a lot of plans to allow for more flexibility with scripts and perhaps interchangeable tiling layouts.
+
+I would highly recommend anyone that has an interest for this technologies to try developing something like this for themselves, it can't be overstated how much you can learn.
+
+And of course, for anyone interested, check out *[[https://github.com/migueldeoleiros/turtile][turtile on GitHub]]*  *all contributions are welcomed!*
+I'll also be diving into more *technical details* and *design* of the compositor in a future post.
+
+[[https://raw.githubusercontent.com/migueldeoleiros/turtile/refs/heads/master/assets/banner_turtile.svg]]
