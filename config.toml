@@ -2,10 +2,6 @@ baseURL      = 'http://migueldeoleiros.github.io/'
 languageCode = 'en-us'
 title        = 'MiguelDeOleiros personal blog'
 theme        = 'hello-friend-ml'
-paginate     = 10
-
-[author]
-    name = "Miguel López López"
 
 [params]
     dateform        = "Jan 2, 2006"
@@ -26,8 +22,10 @@ paginate     = 10
 
     enableThemeToggle = true
 
+    author = "Miguel López López"
+
     [params.logo]
-        logoText = "/home/migueldeoleiros"
+        logoText = "/home/migueldeoleiros/"
         logoHomeLink = "/"
         # or
         #
@@ -51,6 +49,9 @@ paginate     = 10
     [[params.social]]
         name = "linkedin"
         url = "https://www.linkedin.com/in/migueldeoleiros"
+
+[pagination]
+    pagersize = 10
 
 [taxonomies]
     category = "blog"
