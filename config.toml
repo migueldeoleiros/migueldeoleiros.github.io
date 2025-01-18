@@ -66,8 +66,13 @@ theme        = 'hello-friend-ml'
         copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
         readOtherPosts = "Read other posts"
 
-    # And you can even create generic menu
     [[menu.main]]
-        identifier = "posts"
+        identifier = "2-posts"
         name       = "Posts"
         url        = "/posts"
+
+    [[menu.main]]
+        identifier = "1-wiki"
+        name       = "Wiki"
+        url        = "https://wiki.migueldeoleiros.com/"
+
