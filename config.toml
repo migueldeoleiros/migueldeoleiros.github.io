@@ -67,12 +67,17 @@ theme        = 'hello-friend-ml'
         readOtherPosts = "Read other posts"
 
     [[menu.main]]
-        identifier = "2-posts"
-        name       = "Posts"
-        url        = "/posts"
+        identifier = "0-about"
+        name       = "About"
+        url        = "about-me"
 
     [[menu.main]]
         identifier = "1-wiki"
         name       = "Wiki"
         url        = "https://wiki.migueldeoleiros.com/"
+
+    [[menu.main]]
+        identifier = "2-posts"
+        name       = "Posts"
+        url        = "/posts"
 
