@@ -4,6 +4,8 @@ date: 2025-01-18
 draft: false
 ---
 
+#+HTML: <img src="/images/profile_human.jpg" style="float:right" height="400">
+
 Hi, this is Miguel!
 
 I'm a *software developer* and *free software* enthusiast from Spain.
