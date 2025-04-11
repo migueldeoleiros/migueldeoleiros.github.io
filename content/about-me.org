@@ -4,7 +4,7 @@ date: 2025-01-18
 draft: false
 ---
 
-#+HTML: <img src="/images/profile_human.jpg" style="float:right" height="400">
+#+HTML: <img src="/images/profile_human.jpg" style="float:right; max-width:50%;" height="auto">
 
 Hi, this is Miguel!
 
@@ -19,4 +19,6 @@ I write most of my stuff in *English*, as a way to share it with more people, bu
 
 As my bachelor's thesis I worked on a *Wayland* compositor named [[https://github.com/migueldeoleiros/turtile][turtile]] based in wlroots, while I was an intern at Igalia, as part of their *Chromium* team. While working on both this projects in C and C++ I learned a lot about systems development, and low level programing while contributing to the wider *FOSS* comunity.
 
-Feel free to contact me by [[mailto:migueldeoleiros@gmail.com][mail]] or [[https://t.me/migueldeoleiros][telegram]] if you wanna chat about tech or any other interesting topics.
+This days you can find me working as a fullstack developer for *Merlin Software*, a local company in A Coruña, were I've been doing all sort of things, from making websites, AI integrations for existing products and even game development.
+
+Feel free to contact me by [[mailto:migueldeoleiros@gmail.com][mail]] or [[https://t.me/migueldeoleiros][telegram]] if you wanna chat about tech or any other topic.
