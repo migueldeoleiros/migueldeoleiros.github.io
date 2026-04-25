@@ -9,9 +9,25 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "prepare": "husky",
+    "format": "prettier --write \"**/*.{astro,ts,js,css,json,md}\"",
+    "format:check": "prettier --check \"**/*.{astro,ts,js,css,json,md}\"",
+    "lint-staged": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{astro,ts,js,css,json,md}": "prettier --write"
   },
   "dependencies": {
-    "astro": "^6.1.9"
+    "@iconify-json/lucide": "^1.2.103",
+    "@iconify-json/simple-icons": "^1.2.79",
+    "astro": "^6.1.9",
+    "astro-icon": "^1.1.5"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "prettier": "^3.8.3",
+    "prettier-plugin-astro": "^0.14.1"
   }
 }

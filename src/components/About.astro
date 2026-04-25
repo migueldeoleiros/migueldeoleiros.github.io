@@ -1,0 +1,25 @@
+---
+interface AboutCopy {
+	heading: string;
+	image: {
+		src: string;
+		alt: string;
+	};
+}
+
+interface Props {
+	copy: AboutCopy;
+}
+
+const { copy } = Astro.props;
+---
+
+<section class="about" aria-labelledby="about-heading">
+	<h2 id="about-heading">{copy.heading}</h2>
+	<div class="about-content">
+		<figure class="about-media">
+			<img src={copy.image.src} alt={copy.image.alt} loading="lazy" decoding="async" />
+		</figure>
+		<slot />
+	</div>
+</section>
