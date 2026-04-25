@@ -1,33 +1,37 @@
 ---
 interface Props {
-	title: string;
-	description: string;
+  title: string;
+  description: string;
 }
 
 const { title, description } = Astro.props;
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/png" href="/icon.png" />
-		<link rel="apple-touch-icon" href="/icon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content={description} />
-		<title>{title}</title>
-		<script is:inline>
-			(() => {
-				document.documentElement.classList.add('js');
-				const storedTheme = localStorage.getItem('theme-preference');
-				if (storedTheme === 'dark' || storedTheme === 'light') {
-					document.documentElement.dataset.theme = storedTheme;
-				}
-			})();
-		</script>
-		<slot name="head" />
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/icon.png" />
+    <link rel="apple-touch-icon" href="/icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <script is:inline>
+      (() => {
+        document.documentElement.classList.add('js');
+        const storedTheme = localStorage.getItem('theme-preference');
+        if (storedTheme === 'dark' || storedTheme === 'light') {
+          document.documentElement.dataset.theme = storedTheme;
+        }
+      })();
+    </script>
+    <script
+      defer
+      src="https://cloud.umami.is/script.js"
+      data-website-id="28a735b0-045b-49f8-9b04-c20da42e6c60"></script>
+    <slot name="head" />
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
