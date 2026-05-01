@@ -374,24 +374,68 @@ h1 {
 .garden-card {
   align-items: center;
   color: inherit;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr;
   justify-content: center;
   margin-top: 1rem;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
   text-decoration: none;
-  transition:
-    background-color 160ms ease,
-    color 160ms ease;
+  --garden-mx: 50%;
+  --garden-my: 50%;
+  --garden-radius: 0px;
 }
 
-.garden-card:hover,
 .garden-card:focus-visible {
-  background: var(--surface-opposite);
-  color: var(--text-opposite);
+  box-shadow:
+    0 0 0 4px var(--bg),
+    0 0 0 7px var(--text);
 }
 
-.garden-card:hover .garden-icon-card,
-.garden-card:focus-visible .garden-icon-card {
+.garden-layer {
+  align-items: center;
+  display: flex;
+  grid-area: 1 / 1;
+  justify-content: center;
+  padding: var(--padding-about);
+  width: 100%;
+}
+
+.garden-base {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.garden-invert {
+  background: var(--surface-opposite);
+  clip-path: circle(var(--garden-radius) at var(--garden-mx) var(--garden-my));
+  -webkit-clip-path: circle(var(--garden-radius) at var(--garden-mx) var(--garden-my));
+  color: var(--text-opposite);
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.garden-invert .garden-icon-card {
   background: var(--bg-opposite);
+}
+
+.garden-card:hover .garden-invert,
+.garden-card:focus-visible .garden-invert {
+  clip-path: circle(150% at 50% 50%);
+  -webkit-clip-path: circle(150% at 50% 50%);
+}
+
+.js .garden-card[data-interactive='true'] .garden-invert {
+  clip-path: circle(var(--garden-radius) at var(--garden-mx) var(--garden-my));
+  -webkit-clip-path: circle(var(--garden-radius) at var(--garden-mx) var(--garden-my));
+}
+
+.js .garden-card[data-interactive='true']:focus-visible .garden-invert {
+  clip-path: circle(150% at 50% 50%);
+  -webkit-clip-path: circle(150% at 50% 50%);
 }
 
 .garden-copy {
@@ -429,6 +473,41 @@ h1 {
 .garden-icon {
   align-items: center;
   flex: 0 0 auto;
+}
+
+@supports not ((clip-path: circle(1px at 50% 50%)) or (-webkit-clip-path: circle(1px at 50% 50%))) {
+  .garden-invert {
+    opacity: 0;
+  }
+
+  .garden-card:hover .garden-invert,
+  .garden-card:focus-visible .garden-invert {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .garden-card:hover .garden-invert,
+  .garden-card:focus-visible .garden-invert,
+  .js .garden-card[data-interactive='true']:hover .garden-invert,
+  .js .garden-card[data-interactive='true']:focus-visible .garden-invert {
+    clip-path: circle(150% at 50% 50%);
+    -webkit-clip-path: circle(150% at 50% 50%);
+  }
+}
+
+@media (any-hover: none) {
+  .garden-card:hover .garden-invert,
+  .js .garden-card[data-interactive='true']:hover .garden-invert {
+    clip-path: circle(0px at 50% 50%);
+    -webkit-clip-path: circle(0px at 50% 50%);
+  }
+
+  .garden-card:focus-visible .garden-invert,
+  .js .garden-card[data-interactive='true']:focus-visible .garden-invert {
+    clip-path: circle(150% at 50% 50%);
+    -webkit-clip-path: circle(150% at 50% 50%);
+  }
 }
 
 @media (max-width: 52rem) {
