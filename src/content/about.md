@@ -13,4 +13,4 @@ As my bachelor's thesis I worked on a **Wayland** compositor named [turtile](htt
 
 This days you can find me working as a fullstack developer for **Merlin Software**, a local software consultancy in A Coruña, were I've been doing all sort of things, from building websites, internal tools, AI integrations for existing products and even game development.
 
-Feel free to contact me by [mail](mailto:migueldeoleiros@gmail.com) or [telegram](https://t.me/migueldeoleiros) if you wanna chat about tech or any other topic.
+Feel free to contact me by [mail](mailto:hello@migueldeoleiros.com) or [telegram](https://t.me/migueldeoleiros) if you wanna chat about tech or any other topic.
