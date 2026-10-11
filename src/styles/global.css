@@ -260,6 +260,73 @@ h1 {
   color: var(--text);
 }
 
+.hero-legacy[hidden] {
+  display: none;
+}
+
+.hero-particles {
+  align-items: center;
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  min-height: clamp(20rem, 68svh, 44rem);
+  overflow: hidden;
+  padding: var(--padding-hero);
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.hero-particles-stage {
+  display: block;
+  flex: 1 1 auto;
+  min-height: clamp(9rem, 34svh, 20rem);
+  position: relative;
+  width: 100%;
+}
+
+.hero-particles-canvas {
+  display: block;
+  height: 100%;
+  inset: 0;
+  position: absolute;
+  touch-action: pan-y;
+  width: 100%;
+}
+
+.hero-particles-copy {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  width: 100%;
+}
+
+.hero-particles-title {
+  color: var(--text);
+}
+
+.js .hero-particles-title {
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+@media (max-width: 52rem) {
+  .hero-particles {
+    padding: var(--padding-hero-mobile);
+  }
+}
+
 .about {
   background: var(--surface);
   border: 0;

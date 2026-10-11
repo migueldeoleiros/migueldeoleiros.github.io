@@ -63,6 +63,40 @@ export const aboutCopy = {
   },
 };
 
+export const particleMotion = {
+  measureFontSize: 'clamp(6rem, 18vw, 14rem)',
+  maxTextWidthRatio: 0.92,
+  sampleStep: 3,
+  sampleStepRegular: 4,
+  sampleStepNarrow: 5,
+  viewportWideWidth: 1024,
+  viewportRegularWidth: 640,
+  density: 110,
+  minParticleBudget: 650,
+  maxParticleBudget: 3600,
+  particleSize: 4,
+  scatterRadius: 180,
+  scatterSpread: 0.85,
+  entranceDurationMs: 1600,
+  entranceDelaySpread: 420,
+  morphGatherStiffness: 0.01,
+  morphGatherDamping: 0.86,
+  morphGatherDurationMs: 1500,
+
+  waveAmplitude: 1.2,
+  waveTimeScale: 0.001,
+  waveSpeed: 4,
+  waveSpacingX: 0.028,
+  waveSpacingY: 0.022,
+  inertiaStiffness: 0.25,
+  inertiaDamping: 0.78,
+  pointerRadius: 120,
+  pointerStrength: 40,
+  pointerLerp: 0.18,
+  minAlpha: 0.35,
+  alphaRange: 0.65,
+};
+
 export const heroMotion = {
   mobileBreakpointQuery: '(max-width: 52rem)',
   mobileRadius: 100,
