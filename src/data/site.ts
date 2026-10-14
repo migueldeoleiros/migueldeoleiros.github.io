@@ -16,7 +16,6 @@ export const heroCopy = {
   title: 'Miguel López López',
   tagline: 'Software Engineer and Linux Enthusiast',
   invertTitle: 'migueldeoleiros',
-  invertTagline: 'Building software and communities',
 };
 
 export type LinkIcon = 'globe' | 'mail' | 'github' | 'linkedin';
@@ -92,24 +91,6 @@ export const particleMotion = {
   inertiaDamping: 0.78,
   pointerRadius: 120,
   pointerStrength: 40,
-  pointerLerp: 0.18,
   minAlpha: 0.35,
   alphaRange: 0.65,
-};
-
-export const heroMotion = {
-  mobileBreakpointQuery: '(max-width: 52rem)',
-  mobileRadius: 100,
-  desktopRadius: 180,
-  collapseThreshold: 0.25,
-  circleThreshold: 0.75,
-  maxTrailMultiplier: 2.6,
-  capSegments: 24,
-  tailLerpMs: 70,
-  radiusLerpMs: 75,
-  maxDeltaMs: 64,
-  entrySlideMultiplier: 1.15,
-  exitSlideMinimum: 16,
-  exitSlideMultiplier: 0.9,
-  exitFadeDelayMs: 45,
 };

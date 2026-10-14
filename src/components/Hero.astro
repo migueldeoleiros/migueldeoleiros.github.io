@@ -6,7 +6,6 @@ interface HeroCopy {
   title: string;
   tagline: string;
   invertTitle: string;
-  invertTagline: string;
 }
 
 interface Props {
@@ -52,52 +51,6 @@ const iconMap: Record<LinkIcon, string> = {
           })
         }
       </ul>
-    </div>
-  </div>
-
-  <div class="hero-legacy" hidden aria-hidden="true">
-    <div class="hero-surface" data-interactive="false" data-hover="false">
-      <div class="hero-layer hero-base">
-        <h1>{copy.title}</h1>
-        <p class="hero-tagline">{copy.tagline}</p>
-        <ul class="link-list" aria-label="Primary links">
-          {
-            links.map(({ label, href, icon }) => {
-              const iconName = iconMap[icon];
-              return (
-                <li>
-                  <a class="link-pill" href={href} aria-label={label} title={label}>
-                    <span class="link-icon" aria-hidden="true">
-                      <Icon name={iconName} size={18} />
-                    </span>
-                  </a>
-                </li>
-              );
-            })
-          }
-        </ul>
-      </div>
-
-      <div class="hero-layer hero-invert" aria-hidden="true">
-        <h1>{copy.invertTitle}</h1>
-        <p class="hero-tagline">{copy.invertTagline}</p>
-        <ul class="link-list" aria-hidden="true">
-          {
-            links.map(({ icon }) => {
-              const iconName = iconMap[icon];
-              return (
-                <li>
-                  <span class="link-pill" role="presentation">
-                    <span class="link-icon">
-                      <Icon name={iconName} size={18} />
-                    </span>
-                  </span>
-                </li>
-              );
-            })
-          }
-        </ul>
-      </div>
     </div>
   </div>
 </section>

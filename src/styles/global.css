@@ -149,54 +149,6 @@ a:focus-visible {
   padding: var(--padding-none);
 }
 
-.hero-surface {
-  --mx: 50%;
-  --my: 50%;
-  --radius: 0px;
-  background: var(--surface);
-  border-block: 0;
-  display: grid;
-  min-height: clamp(20rem, 68svh, 44rem);
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-}
-
-.hero-layer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.9rem;
-  padding: var(--padding-hero);
-  position: relative;
-  text-align: center;
-  z-index: 1;
-}
-
-.hero-base {
-  background: var(--surface);
-  color: var(--text);
-}
-
-.hero-invert {
-  background: var(--text);
-  clip-path: circle(var(--radius) at var(--mx) var(--my));
-  -webkit-clip-path: circle(var(--radius) at var(--mx) var(--my));
-  display: flex;
-  inset: 0;
-  opacity: 0;
-  pointer-events: none;
-  position: absolute;
-  color: var(--bg);
-  transition: opacity 60ms linear;
-  z-index: 2;
-}
-
-.js .hero-surface[data-interactive='true'][data-hover='true'] .hero-invert {
-  opacity: 1;
-}
-
 h1 {
   font-family: 'Space Grotesk', 'IBM Plex Sans', sans-serif;
   font-size: clamp(1.5rem, 0.9rem + 6.3vw, 5.8rem);
@@ -216,10 +168,6 @@ h1 {
   max-width: 42ch;
   position: relative;
   z-index: 1;
-}
-
-.hero-invert .hero-tagline {
-  color: var(--surface-2);
 }
 
 .link-list {
@@ -252,16 +200,6 @@ h1 {
 .garden-icon,
 .toggle-icon {
   display: inline-flex;
-}
-
-.hero-invert .link-pill {
-  background: var(--bg);
-  border-color: var(--muted);
-  color: var(--text);
-}
-
-.hero-legacy[hidden] {
-  display: none;
 }
 
 .hero-particles {
@@ -449,9 +387,6 @@ h1 {
   padding: 0;
   position: relative;
   text-decoration: none;
-  --garden-mx: 50%;
-  --garden-my: 50%;
-  --garden-radius: 0px;
 }
 
 .garden-card:focus-visible {
@@ -475,41 +410,6 @@ h1 {
   transition:
     background-color 180ms ease,
     color 180ms ease;
-}
-
-.garden-invert {
-  background: var(--surface-opposite);
-  clip-path: circle(var(--garden-radius) at var(--garden-mx) var(--garden-my));
-  -webkit-clip-path: circle(var(--garden-radius) at var(--garden-mx) var(--garden-my));
-  color: var(--text-opposite);
-  inset: 0;
-  pointer-events: none;
-  position: absolute;
-  z-index: 1;
-}
-
-.garden-invert .garden-icon-card {
-  background: var(--bg-opposite);
-}
-
-.garden-card[data-particle-morph] .garden-invert {
-  display: none;
-}
-
-.garden-card:hover .garden-invert,
-.garden-card:focus-visible .garden-invert {
-  clip-path: circle(150% at 50% 50%);
-  -webkit-clip-path: circle(150% at 50% 50%);
-}
-
-.js .garden-card[data-interactive='true'] .garden-invert {
-  clip-path: circle(var(--garden-radius) at var(--garden-mx) var(--garden-my));
-  -webkit-clip-path: circle(var(--garden-radius) at var(--garden-mx) var(--garden-my));
-}
-
-.js .garden-card[data-interactive='true']:focus-visible .garden-invert {
-  clip-path: circle(150% at 50% 50%);
-  -webkit-clip-path: circle(150% at 50% 50%);
 }
 
 .garden-copy {
@@ -570,51 +470,14 @@ h1 {
   }
 }
 
-@supports not ((clip-path: circle(1px at 50% 50%)) or (-webkit-clip-path: circle(1px at 50% 50%))) {
-  .garden-invert {
-    opacity: 0;
-  }
-
-  .garden-card:hover .garden-invert,
-  .garden-card:focus-visible .garden-invert {
-    opacity: 1;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .garden-base,
   .garden-icon-card {
     transition: none;
   }
-
-  .garden-card:hover .garden-invert,
-  .garden-card:focus-visible .garden-invert,
-  .js .garden-card[data-interactive='true']:hover .garden-invert,
-  .js .garden-card[data-interactive='true']:focus-visible .garden-invert {
-    clip-path: circle(150% at 50% 50%);
-    -webkit-clip-path: circle(150% at 50% 50%);
-  }
-}
-
-@media (any-hover: none) {
-  .garden-card:hover .garden-invert,
-  .js .garden-card[data-interactive='true']:hover .garden-invert {
-    clip-path: circle(0px at 50% 50%);
-    -webkit-clip-path: circle(0px at 50% 50%);
-  }
-
-  .garden-card:focus-visible .garden-invert,
-  .js .garden-card[data-interactive='true']:focus-visible .garden-invert {
-    clip-path: circle(150% at 50% 50%);
-    -webkit-clip-path: circle(150% at 50% 50%);
-  }
 }
 
 @media (max-width: 52rem) {
-  .hero-layer {
-    padding: var(--padding-hero-mobile);
-  }
-
   .about-media {
     float: none;
     margin: 0 0 1rem;
