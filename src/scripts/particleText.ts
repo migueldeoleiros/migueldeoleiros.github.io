@@ -90,6 +90,9 @@ export const initParticleText = (): void => {
 
   const reduceMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
   const colorSchemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  const hoverQuery = window.matchMedia('(any-hover: hover)');
+  const gardenCard = document.querySelector<HTMLElement>('.garden-card');
+  const gardenIcon = gardenCard?.querySelector('.garden-base svg');
   const tagline = wrap.querySelector('.hero-tagline');
 
   let reduceMotion = reduceMotionQuery.matches;
@@ -110,8 +113,12 @@ export const initParticleText = (): void => {
   let showingAlt = false;
   let morphing = false;
   let morphStartedAt = 0;
+  let gardenHovered = false;
+  let gardenActive = false;
+  let treePoints: SamplePoint[] = [];
+  const textPoints = new Map<string, SamplePoint[]>();
 
-  const pointer = { active: false, id: -1, x: 0, y: 0, sx: 0, sy: 0 };
+  const pointer = { active: false, id: -1, x: 0, y: 0 };
 
   const readPalette = (): void => {
     const fromColor = parseColor(getComputedStyle(tagline ?? title).color);
@@ -181,6 +188,12 @@ export const initParticleText = (): void => {
   };
 
   const collectPoints = (targetText: string): SamplePoint[] => {
+    const cached = textPoints.get(targetText);
+
+    if (cached) {
+      return cached;
+    }
+
     const styles = getComputedStyle(title);
     const fontFamily = styles.fontFamily || 'sans-serif';
     const fontWeight = styles.fontWeight || '700';
@@ -224,7 +237,49 @@ export const initParticleText = (): void => {
     const offsetX = width / 2 - offscreen.width / 2;
     const offsetY = height / 2 - offscreen.height / 2;
 
-    return sampleOffscreen(offscreen, offscreenCtx, offsetX, offsetY);
+    const points = sampleOffscreen(offscreen, offscreenCtx, offsetX, offsetY);
+    textPoints.set(targetText, points);
+    return points;
+  };
+
+  const collectTreePoints = (): SamplePoint[] => {
+    if (!(gardenIcon instanceof SVGSVGElement) || typeof Path2D === 'undefined') {
+      return [];
+    }
+
+    const box = gardenIcon.viewBox.baseVal;
+    const offscreen = document.createElement('canvas');
+    const offscreenCtx = offscreen.getContext('2d', { willReadFrequently: true });
+
+    if (!offscreenCtx || box.width <= 0 || box.height <= 0) {
+      return [];
+    }
+
+    // Fit the original icon's stroked outline inside the existing hero canvas.
+    const scale = Math.min((width * 0.65) / box.width, (height * 0.75) / box.height);
+    offscreen.width = Math.max(1, Math.ceil(box.width * scale));
+    offscreen.height = Math.max(1, Math.ceil(box.height * scale));
+    offscreenCtx.scale(scale, scale);
+    offscreenCtx.translate(-box.x, -box.y);
+    offscreenCtx.strokeStyle = '#fff';
+    offscreenCtx.lineWidth = Number(gardenIcon.getAttribute('stroke-width')) || 2;
+    offscreenCtx.lineCap = 'round';
+    offscreenCtx.lineJoin = 'round';
+
+    try {
+      for (const path of gardenIcon.querySelectorAll('path')) {
+        offscreenCtx.stroke(new Path2D(path.getAttribute('d') ?? ''));
+      }
+    } catch {
+      return [];
+    }
+
+    return sampleOffscreen(
+      offscreen,
+      offscreenCtx,
+      (width - offscreen.width) / 2,
+      (height - offscreen.height) / 2,
+    );
   };
 
   // Bind the shortest candidate pairs first, then reuse all remaining dots.
@@ -253,9 +308,9 @@ export const initParticleText = (): void => {
       const point = targets[target];
       const gx0 = clamp(Math.floor(point.x / cell) + 1, 0, cols - 1);
       const gy0 = clamp(Math.floor(point.y / cell) + 1, 0, rows - 1);
-      let collected = 0;
+      const nearest: { target: number; origin: number; distance: number }[] = [];
 
-      for (let ring = 0; ring <= maxRing && collected < candidatesPerTarget; ring += 1) {
+      for (let ring = 0; ring <= maxRing && nearest.length < candidatesPerTarget; ring += 1) {
         for (let gy = gy0 - ring; gy <= gy0 + ring; gy += 1) {
           if (gy < 0 || gy >= rows) {
             continue;
@@ -273,12 +328,29 @@ export const initParticleText = (): void => {
             for (const index of grid[gy * cols + gx]) {
               const dx = origin[index].x - point.x;
               const dy = origin[index].y - point.y;
-              candidates.push({ target, origin: index, distance: dx * dx + dy * dy });
-              collected += 1;
+              const distance = dx * dx + dy * dy;
+              // Finish the ring, but retain only its nearest candidates. Dense
+              // buckets must not inflate the global distance sort unboundedly.
+              if (
+                nearest.length === candidatesPerTarget &&
+                distance >= nearest[nearest.length - 1].distance
+              ) {
+                continue;
+              }
+
+              let position = nearest.length;
+              while (position > 0 && distance < nearest[position - 1].distance) {
+                position -= 1;
+              }
+              nearest.splice(position, 0, { target, origin: index, distance });
+              if (nearest.length > candidatesPerTarget) {
+                nearest.pop();
+              }
             }
           }
         }
       }
+      candidates.push(...nearest);
     }
 
     candidates.sort((a, b) => a.distance - b.distance);
@@ -426,7 +498,21 @@ export const initParticleText = (): void => {
 
     readPalette();
 
+    // Samples belong to this dimensions/typography build, not a hover cycle.
+    textPoints.clear();
     const points = collectPoints(currentText);
+    treePoints = reduceMotion ? [] : collectTreePoints();
+    const gardenEnabled =
+      points.length > 0 && treePoints.length > 0 && !reduceMotion && hoverQuery.matches;
+
+    if (gardenCard) {
+      gardenCard.toggleAttribute('data-particle-morph', gardenEnabled);
+    }
+
+    gardenActive =
+      gardenEnabled &&
+      ((gardenHovered && hoverQuery.matches) || !!gardenCard?.matches(':focus-visible'));
+    morphing = false;
 
     if (points.length === 0) {
       particles = [];
@@ -435,10 +521,12 @@ export const initParticleText = (): void => {
 
     particles = createParticles(points);
 
+    if (gardenActive) {
+      particles = createParticles(treePoints, particles);
+    }
+
     pointer.x = width / 2;
     pointer.y = height / 2;
-    pointer.sx = pointer.x;
-    pointer.sy = pointer.y;
     pointer.active = false;
     pointer.id = -1;
 
@@ -457,8 +545,6 @@ export const initParticleText = (): void => {
 
   const draw = (time: number): void => {
     ctx.clearRect(0, 0, width, height);
-    pointer.sx += (pointer.x - pointer.sx) * particleMotion.pointerLerp;
-    pointer.sy += (pointer.y - pointer.sy) * particleMotion.pointerLerp;
 
     const frameDelta = lastFrameTime ? Math.min(64, time - lastFrameTime) : 16.67;
     lastFrameTime = time;
@@ -518,8 +604,8 @@ export const initParticleText = (): void => {
       }
 
       if (pointer.active && !reduceMotion) {
-        const dx = particle.x - pointer.sx;
-        const dy = particle.y - pointer.sy;
+        const dx = particle.x - pointer.x;
+        const dy = particle.y - pointer.y;
         const distance = Math.hypot(dx, dy);
 
         if (distance < particleMotion.pointerRadius && distance > 0.1) {
@@ -657,6 +743,36 @@ export const initParticleText = (): void => {
     applyMorph(collectPoints(nextText));
   };
 
+  const updateGarden = (): void => {
+    const active =
+      !!gardenCard?.hasAttribute('data-particle-morph') &&
+      ((gardenHovered && hoverQuery.matches) || gardenCard.matches(':focus-visible'));
+
+    if (active === gardenActive) {
+      return;
+    }
+
+    gardenActive = active;
+    applyMorph(active ? treePoints : collectPoints(currentText));
+  };
+
+  gardenCard?.addEventListener('pointerenter', (event) => {
+    if (event.pointerType === 'mouse' || event.pointerType === 'pen') {
+      gardenHovered = true;
+      updateGarden();
+    }
+  });
+  const leaveGarden = (event: PointerEvent): void => {
+    if (event.pointerType === 'mouse' || event.pointerType === 'pen') {
+      gardenHovered = false;
+      updateGarden();
+    }
+  };
+  gardenCard?.addEventListener('pointerleave', leaveGarden);
+  gardenCard?.addEventListener('pointercancel', leaveGarden);
+  gardenCard?.addEventListener('focus', updateGarden);
+  gardenCard?.addEventListener('blur', updateGarden);
+
   const handleHeroToggle = (event: Event): void => {
     if (!altText) {
       return;
@@ -670,7 +786,9 @@ export const initParticleText = (): void => {
 
     showingAlt = !showingAlt;
     currentText = showingAlt ? altText : text;
-    morphTo(currentText);
+    if (!gardenActive) {
+      morphTo(currentText);
+    }
   };
 
   wrap.addEventListener('click', handleHeroToggle);
@@ -693,6 +811,11 @@ export const initParticleText = (): void => {
   });
 
   colorSchemeQuery.addEventListener('change', readPalette);
+  hoverQuery.addEventListener('change', () => {
+    gardenHovered = false;
+    build(true);
+    start();
+  });
 
   reduceMotionQuery.addEventListener('change', (event) => {
     reduceMotion = event.matches;
@@ -704,7 +827,8 @@ export const initParticleText = (): void => {
   resizeObserver.observe(wrap);
 
   const initialize = (): void => {
-    build();
+    // A resize may have built with fallback fonts before fonts.ready resolved.
+    build(true);
     start();
   };
 

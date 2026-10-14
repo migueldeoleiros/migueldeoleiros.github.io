@@ -472,6 +472,9 @@ h1 {
 .garden-base {
   background: var(--surface);
   color: var(--text);
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
 }
 
 .garden-invert {
@@ -487,6 +490,10 @@ h1 {
 
 .garden-invert .garden-icon-card {
   background: var(--bg-opposite);
+}
+
+.garden-card[data-particle-morph] .garden-invert {
+  display: none;
 }
 
 .garden-card:hover .garden-invert,
@@ -535,11 +542,32 @@ h1 {
   display: inline-flex;
   justify-content: center;
   padding: var(--padding-icon-card);
+  transition: background-color 180ms ease;
 }
 
 .garden-icon {
   align-items: center;
   flex: 0 0 auto;
+}
+
+.garden-card:focus-visible .garden-base {
+  background: var(--surface-opposite);
+  color: var(--text-opposite);
+}
+
+.garden-card:focus-visible .garden-base .garden-icon-card {
+  background: var(--bg-opposite);
+}
+
+@media (hover: hover) {
+  .garden-card:hover .garden-base {
+    background: var(--surface-opposite);
+    color: var(--text-opposite);
+  }
+
+  .garden-card:hover .garden-base .garden-icon-card {
+    background: var(--bg-opposite);
+  }
 }
 
 @supports not ((clip-path: circle(1px at 50% 50%)) or (-webkit-clip-path: circle(1px at 50% 50%))) {
@@ -554,6 +582,11 @@ h1 {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .garden-base,
+  .garden-icon-card {
+    transition: none;
+  }
+
   .garden-card:hover .garden-invert,
   .garden-card:focus-visible .garden-invert,
   .js .garden-card[data-interactive='true']:hover .garden-invert,

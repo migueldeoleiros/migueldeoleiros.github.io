@@ -73,6 +73,14 @@ export const initGardenReveal = (): void => {
     startTime = 0;
 
     const animate = (time: number) => {
+      // Particle initialization waits for fonts, so it can take over after setup.
+      if (card.hasAttribute('data-particle-morph')) {
+        currentRadius = 0;
+        setReveal(0, 0, 0);
+        rafId = 0;
+        return;
+      }
+
       if (startTime === 0) {
         startTime = time;
       }
@@ -97,7 +105,10 @@ export const initGardenReveal = (): void => {
   setReveal(0, 0, 0);
 
   card.addEventListener('pointerenter', (event) => {
-    if (event.pointerType !== 'mouse' && event.pointerType !== 'pen') {
+    if (
+      card.hasAttribute('data-particle-morph') ||
+      (event.pointerType !== 'mouse' && event.pointerType !== 'pen')
+    ) {
       return;
     }
 
@@ -107,7 +118,10 @@ export const initGardenReveal = (): void => {
   });
 
   card.addEventListener('pointerleave', (event) => {
-    if (event.pointerType !== 'mouse' && event.pointerType !== 'pen') {
+    if (
+      card.hasAttribute('data-particle-morph') ||
+      (event.pointerType !== 'mouse' && event.pointerType !== 'pen')
+    ) {
       return;
     }
 
