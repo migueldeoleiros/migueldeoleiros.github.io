@@ -33,7 +33,8 @@
   - `.hero-particles` supplies `data-particle-text` and `data-particle-alt-text`; retain `[data-particle-canvas]` and the accessible `[data-particle-title]` fallback.
   - Hero clicks toggle particle title text, except clicks on links/buttons; pointer interaction supports mouse and touch without blocking vertical scrolling.
   - Garden tree morph samples the actual `.garden-base svg` paths. Keep that base DOM; `data-particle-morph` is an internal enablement flag, gated by valid samples, hover capability, and no reduced motion.
-  - Reduced motion renders static particles and disables garden morphing. Preserve palette updates and resize/font rebuilding.
+  - Hero social links use `[data-particle-shape]` and self-contained inline SVGs. Their cached raster samples preserve stroked shapes and filled brands; async samples belong to one build only. Garden and socials share most-recent hover/focus-visible selection; leaving restores the selected title or any still-active focus target.
+  - Reduced motion renders static particles and disables all shape morphing. Preserve palette updates and resize/font rebuilding.
 - Garden color inversion is regular CSS on `.garden-base` and its icon card: `:focus-visible` always works, hover is gated by `(hover: hover)`, and reduced motion disables color transitions. Keep no-JS behavior and the focus ring; no duplicate reveal layer is needed.
 - Theme toggle stays icon-only and must keep updating `aria-label`, `title`, and `aria-pressed` (`src/scripts/themeToggle.ts`).
 - Head bootstrap script in `BaseLayout` sets `js` class and restores stored theme before paint; keep it inline.

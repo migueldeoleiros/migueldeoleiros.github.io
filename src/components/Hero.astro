@@ -41,9 +41,15 @@ const iconMap: Record<LinkIcon, string> = {
             const iconName = iconMap[icon];
             return (
               <li>
-                <a class="link-pill" href={href} aria-label={label} title={label}>
+                <a
+                  class="link-pill"
+                  href={href}
+                  aria-label={label}
+                  title={label}
+                  data-particle-shape
+                >
                   <span class="link-icon" aria-hidden="true">
-                    <Icon name={iconName} size={18} />
+                    <Icon name={iconName} size={18} is:inline />
                   </span>
                 </a>
               </li>
