@@ -185,6 +185,9 @@ h1 {
 
 .link-pill {
   height: 2.7rem;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
   width: 2.7rem;
 }
 
@@ -192,8 +195,16 @@ h1 {
   text-decoration: none;
 }
 
-.link-list a:hover {
-  background: var(--surface-2);
+.link-pill:focus-visible {
+  background: var(--surface-opposite);
+  color: var(--text-opposite);
+}
+
+@media (hover: hover) {
+  .link-pill:hover {
+    background: var(--surface-opposite);
+    color: var(--text-opposite);
+  }
 }
 
 .link-icon,
@@ -465,6 +476,7 @@ h1 {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .link-pill,
   .garden-base,
   .garden-icon-card {
     transition: none;
