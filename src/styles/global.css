@@ -79,6 +79,7 @@
 }
 
 :root.theme-transition-expand::view-transition-new(root) {
+  animation: theme-expand 850ms cubic-bezier(0.25, 1, 0.3, 1) both;
   z-index: 2;
 }
 
@@ -87,7 +88,26 @@
 }
 
 :root.theme-transition-retract::view-transition-old(root) {
+  animation: theme-retract 850ms cubic-bezier(0.25, 1, 0.3, 1) both;
   z-index: 2;
+}
+
+@keyframes theme-expand {
+  from {
+    clip-path: circle(0px at var(--theme-x) var(--theme-y));
+  }
+  to {
+    clip-path: circle(var(--theme-radius) at var(--theme-x) var(--theme-y));
+  }
+}
+
+@keyframes theme-retract {
+  from {
+    clip-path: circle(var(--theme-radius) at var(--theme-x) var(--theme-y));
+  }
+  to {
+    clip-path: circle(0px at var(--theme-x) var(--theme-y));
+  }
 }
 
 * {
